@@ -84,7 +84,7 @@ export const register = async (req, res, helperData) => {
     const isRouteHandler = req && req.body;
 
     try {
-        
+
         const userData = isRouteHandler ? req.body : helperData;
         const { fullName, email, password, role } = userData;
 
@@ -110,7 +110,7 @@ export const register = async (req, res, helperData) => {
             });
         }
 
-        return newUser; 
+        return newUser;
 
     } catch (error) {
         console.error("Registration Error:", error);
@@ -252,14 +252,14 @@ export const changePassword = async (req, res) => {
 
     // Validation
     if (!oldPassword || !newPassword) {
-        return res.status(400).json({ 
-            message: "Please provide both oldPassword and newPassword" 
+        return res.status(400).json({
+            message: "Please provide both oldPassword and newPassword"
         });
     }
 
     if (newPassword.length < 6) {
-        return res.status(400).json({ 
-            message: "New password must be at least 6 characters long" 
+        return res.status(400).json({
+            message: "New password must be at least 6 characters long"
         });
     }
 
@@ -273,8 +273,8 @@ export const changePassword = async (req, res) => {
 
         // Only allow Students and Teachers to change password via this route
         if (!['student', 'teacher'].includes(user.role)) {
-            return res.status(403).json({ 
-                message: "Only students and teachers are allowed to change password" 
+            return res.status(403).json({
+                message: "Only students and teachers are allowed to change password"
             });
         }
 
