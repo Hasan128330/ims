@@ -41,7 +41,7 @@ const TeacherDashboard = () => {
             const token = localStorage.getItem('token'); 
 
             // FIX 2: Correct URL and Add Authorization Header
-            const res = await axios.post('http://localhost:5000/api/teacher/upload-notes', formData, {
+            const res = await axios.post('https://ims-itej.onrender.com/api/teacher/upload-notes' ?? 'http://localhost:5000/api/teacher/upload-notes', formData, {
                 headers: { 
                     'Content-Type': 'multipart/form-data',
                     'Authorization': `Bearer ${token}` // Critical for 'protect' middleware
