@@ -28,8 +28,20 @@ const app = express();
 const port = process.env.PORT || 5000;
 
 // Middlewares
+// CORS: allow the dev origin and the deployed frontend. Configure via
+// CLIENT_URL env var; multiple origins can be comma-separated.
+const allowedOrigins = (process.env.CLIENT_URL || "http://localhost:5173")
+    .split(",")
+    .map(o => o.trim());
+
 app.use(cors({
-    origin: "https://ims-wine-three.vercel.app/" ?? "http://localhost:5173",
+    origin: function (origin, callback) {
+        // allow requests with no origin (curl, Postman, same-origin)
+        if (!origin || allowedOrigins.includes(origin)) {
+            return callback(null, true);
+        }
+        return callback(new Error(`Origin ${origin} not allowed by CORS`));
+    },
     credentials: true
 }));
 app.use(express.json());

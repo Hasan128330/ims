@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import toast from 'react-hot-toast';
-import axios from 'axios';
+import axiosInstance from '../../api/axios.js';
 
 const TeacherDashboard = () => {
     const [file, setFile] = useState(null);
@@ -29,20 +29,20 @@ const TeacherDashboard = () => {
 
         const toastId = toast.loading('Uploading notes...');
         const formData = new FormData();
-        formData.append('file', file); 
+        formData.append('file', file);
         formData.append('title', formDataFields.title);
         formData.append('subject', formDataFields.subject);
         formData.append('className', formDataFields.className);
 
         try {
             setUploadStatus('Uploading...');
-            
+
             // FIX 1: Get token from localStorage (assuming that's where you store it on login)
-            const token = localStorage.getItem('token'); 
+            const token = localStorage.getItem('token');
 
             // FIX 2: Correct URL and Add Authorization Header
-            const res = await axios.post('https://ims-itej.onrender.com/api/teacher/upload-notes' ?? 'http://localhost:5000/api/teacher/upload-notes', formData, {
-                headers: { 
+            const res = await axiosInstance.post('/teacher/upload-notes', formData, {
+                headers: {
                     'Content-Type': 'multipart/form-data',
                     'Authorization': `Bearer ${token}` // Critical for 'protect' middleware
                 },
@@ -81,7 +81,7 @@ const TeacherDashboard = () => {
             {/* --- UPLOAD SECTION --- */}
             <section className="bg-indigo-950/50 backdrop-blur-md rounded-2xl border border-purple-400/30 p-8 shadow-2xl" aria-labelledby="upload-notes-title">
                 <h3 id="upload-notes-title" className="text-2xl font-semibold text-purple-400 mb-6">Upload Notes</h3>
-                
+
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
                     <input type="text" name="title" value={formDataFields.title} placeholder="Note Title" onChange={handleInputChange} aria-label='Note title' aria-required="true" className="bg-indigo-900/50 border border-purple-500/30 rounded-lg p-2 text-white outline-none" />
                     <input type="text" name="subject" value={formDataFields.subject} placeholder="Subject" onChange={handleInputChange} aria-label='Subject' aria-required="true" className="bg-indigo-900/50 border border-purple-500/30 rounded-lg p-2 text-white outline-none" />

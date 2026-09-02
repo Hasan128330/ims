@@ -16,7 +16,7 @@ router.use(protect, authorize('admin'));
 router.get('/dashboard', (req, res) => res.json({ success: true, message: 'Welcome to the Admin Dashboard' }));
 
 
-router.post('/register-user', register);  // not good ...
+// router.post('/register-user', register);  // not good ...
 // creating reception routes
 
 router.post('/az-reception/register-receptionist', registerReceptionist);
