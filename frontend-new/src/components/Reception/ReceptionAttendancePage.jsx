@@ -31,12 +31,12 @@ const ReceptionAttendancePage = () => {
 
     return (
         <main className="space-y-8" aria-labelledby="attendance-title">
-            <h1 id="attendance-title" className="text-4xl font-extrabold bg-gradient-to-r from-cyan-400 to-purple-500 bg-clip-text text-transparent">
+            <h1 id="attendance-title" className="text-4xl font-extrabold bg-gradient-to-r from-blue-400 to-sky-500 bg-clip-text text-transparent">
                 Attendance
             </h1>
 
-            <section className="bg-indigo-950/50 backdrop-blur-md rounded-2xl border border-cyan-400/30 p-6 max-w-3xl" aria-labelledby="mark-attendance-title">
-                <h2 id="mark-attendance-title" className="text-2xl font-semibold text-cyan-300 mb-4">Mark Attendance</h2>
+            <section className="bg-blue-950/50 backdrop-blur-md rounded-2xl border border-blue-400/30 p-6 max-w-3xl" aria-labelledby="mark-attendance-title">
+                <h2 id="mark-attendance-title" className="text-2xl font-semibold text-blue-300 mb-4">Mark Attendance</h2>
 
                 <form onSubmit={handleSubmit} className="space-y-4">
                     <div className="space-y-1">
@@ -74,7 +74,7 @@ const ReceptionAttendancePage = () => {
                     <button
                         type="submit"
                         disabled={loading}
-                        className="w-full py-4 bg-gradient-to-r from-purple-600 to-cyan-600 rounded-xl text-white font-bold hover:shadow-lg transition"
+                        className="w-full py-4 bg-gradient-to-r from-sky-600 to-blue-600 rounded-xl text-white font-bold hover:shadow-lg transition"
                     >
                         {loading ? 'Processing…' : 'Mark Attendance'}
                     </button>

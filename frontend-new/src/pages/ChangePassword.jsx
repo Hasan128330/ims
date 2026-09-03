@@ -50,18 +50,18 @@ const ChangePassword = () => {
 
     return (
         <div className="max-w-2xl mx-auto mt-8 animate-in fade-in slide-in-from-bottom-4 duration-700">
-            <div className="bg-indigo-950/50 backdrop-blur-md rounded-3xl border border-cyan-400/30 p-8 shadow-2xl relative overflow-hidden">
+            <div className="bg-blue-950/50 backdrop-blur-md rounded-3xl border border-blue-400/30 p-8 shadow-2xl relative overflow-hidden">
                 {/* Decorative background elements */}
-                <div className="absolute -top-24 -right-24 w-48 h-48 bg-purple-600/20 rounded-full blur-3xl"></div>
-                <div className="absolute -bottom-24 -left-24 w-48 h-48 bg-cyan-600/20 rounded-full blur-3xl"></div>
+                <div className="absolute -top-24 -right-24 w-48 h-48 bg-sky-600/20 rounded-full blur-3xl"></div>
+                <div className="absolute -bottom-24 -left-24 w-48 h-48 bg-blue-600/20 rounded-full blur-3xl"></div>
 
                 <div className="relative z-10">
                     <div className="flex items-center gap-4 mb-8">
-                        <div className="p-3 bg-gradient-to-br from-purple-600/20 to-cyan-600/20 rounded-2xl border border-cyan-400/20">
-                            <ShieldCheck className="w-8 h-8 text-cyan-400" />
+                        <div className="p-3 bg-gradient-to-br from-sky-600/20 to-blue-600/20 rounded-2xl border border-blue-400/20">
+                            <ShieldCheck className="w-8 h-8 text-blue-400" />
                         </div>
                         <div>
-                            <h2 className="text-3xl font-extrabold bg-gradient-to-r from-cyan-400 to-purple-500 bg-clip-text text-transparent">
+                            <h2 className="text-3xl font-extrabold bg-gradient-to-r from-blue-400 to-sky-500 bg-clip-text text-transparent">
                                 Update Security
                             </h2>
                             <p className="text-gray-400 text-sm mt-1">Manage your account password and security settings</p>
@@ -77,7 +77,7 @@ const ChangePassword = () => {
                                 </label>
                                 <div className="relative group">
                                     <div className="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
-                                        <KeyRound className="w-5 h-5 text-gray-500 group-focus-within:text-cyan-400 transition-colors" />
+                                        <KeyRound className="w-5 h-5 text-gray-500 group-focus-within:text-blue-400 transition-colors" />
                                     </div>
                                     <input
                                         type={showOldPassword ? "text" : "password"}
@@ -85,13 +85,13 @@ const ChangePassword = () => {
                                         value={formData.oldPassword}
                                         onChange={handleChange}
                                         required
-                                        className="w-full bg-indigo-900/40 border border-cyan-400/20 rounded-2xl py-3 pl-12 pr-12 text-white placeholder:text-gray-600 focus:outline-none focus:ring-2 focus:ring-cyan-500/50 focus:border-cyan-400/50 transition-all backdrop-blur-sm"
+                                        className="w-full bg-blue-900/40 border border-blue-400/20 rounded-2xl py-3 pl-12 pr-12 text-white placeholder:text-gray-600 focus:outline-none focus:ring-2 focus:ring-blue-500/50 focus:border-blue-400/50 transition-all backdrop-blur-sm"
                                         placeholder="Enter current password"
                                     />
                                     <button
                                         type="button"
                                         onClick={() => setShowOldPassword(!showOldPassword)}
-                                        className="absolute inset-y-0 right-0 pr-4 flex items-center text-gray-500 hover:text-cyan-400 transition-colors"
+                                        className="absolute inset-y-0 right-0 pr-4 flex items-center text-gray-500 hover:text-blue-400 transition-colors"
                                     >
                                         {showOldPassword ? <EyeOff size={20} /> : <Eye size={20} />}
                                     </button>
@@ -106,7 +106,7 @@ const ChangePassword = () => {
                                     </label>
                                     <div className="relative group">
                                         <div className="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
-                                            <KeyRound className="w-5 h-5 text-gray-500 group-focus-within:text-purple-400 transition-colors" />
+                                            <KeyRound className="w-5 h-5 text-gray-500 group-focus-within:text-sky-400 transition-colors" />
                                         </div>
                                         <input
                                             type={showNewPassword ? "text" : "password"}
@@ -114,13 +114,13 @@ const ChangePassword = () => {
                                             value={formData.newPassword}
                                             onChange={handleChange}
                                             required
-                                            className="w-full bg-indigo-900/40 border border-purple-400/20 rounded-2xl py-3 pl-12 pr-12 text-white placeholder:text-gray-600 focus:outline-none focus:ring-2 focus:ring-purple-500/50 focus:border-purple-400/50 transition-all backdrop-blur-sm"
+                                            className="w-full bg-blue-900/40 border border-sky-400/20 rounded-2xl py-3 pl-12 pr-12 text-white placeholder:text-gray-600 focus:outline-none focus:ring-2 focus:ring-sky-500/50 focus:border-sky-400/50 transition-all backdrop-blur-sm"
                                             placeholder="Min. 6 chars"
                                         />
                                         <button
                                             type="button"
                                             onClick={() => setShowNewPassword(!showNewPassword)}
-                                            className="absolute inset-y-0 right-0 pr-4 flex items-center text-gray-500 hover:text-purple-400 transition-colors"
+                                            className="absolute inset-y-0 right-0 pr-4 flex items-center text-gray-500 hover:text-sky-400 transition-colors"
                                         >
                                             {showNewPassword ? <EyeOff size={20} /> : <Eye size={20} />}
                                         </button>
@@ -142,7 +142,7 @@ const ChangePassword = () => {
                                             value={formData.confirmPassword}
                                             onChange={handleChange}
                                             required
-                                            className="w-full bg-indigo-900/40 border border-emerald-400/20 rounded-2xl py-3 pl-12 pr-4 text-white placeholder:text-gray-600 focus:outline-none focus:ring-2 focus:ring-emerald-500/50 focus:border-emerald-400/50 transition-all backdrop-blur-sm"
+                                            className="w-full bg-blue-900/40 border border-emerald-400/20 rounded-2xl py-3 pl-12 pr-4 text-white placeholder:text-gray-600 focus:outline-none focus:ring-2 focus:ring-emerald-500/50 focus:border-emerald-400/50 transition-all backdrop-blur-sm"
                                             placeholder="Repeat password"
                                         />
                                     </div>
@@ -154,7 +154,7 @@ const ChangePassword = () => {
                             <button
                                 type="submit"
                                 disabled={loading}
-                                className="w-full bg-gradient-to-r from-purple-600 to-cyan-600 hover:from-purple-500 hover:to-cyan-500 text-white font-bold py-4 rounded-2xl transition-all duration-300 shadow-lg shadow-purple-500/20 hover:shadow-cyan-500/30 flex items-center justify-center gap-3 disabled:opacity-50 disabled:cursor-not-allowed group"
+                                className="w-full bg-gradient-to-r from-sky-600 to-blue-600 hover:from-sky-500 hover:to-blue-500 text-white font-bold py-4 rounded-2xl transition-all duration-300 shadow-lg shadow-sky-500/20 hover:shadow-blue-500/30 flex items-center justify-center gap-3 disabled:opacity-50 disabled:cursor-not-allowed group"
                             >
                                 {loading ? (
                                     <>
@@ -174,7 +174,7 @@ const ChangePassword = () => {
             </div>
 
             {/* Security Tip */}
-            <div className="mt-6 p-4 bg-indigo-950/30 backdrop-blur-sm rounded-2xl border border-white/5 flex items-start gap-3">
+            <div className="mt-6 p-4 bg-blue-950/30 backdrop-blur-sm rounded-2xl border border-white/5 flex items-start gap-3">
                 <div className="mt-1 p-1 bg-amber-500/10 rounded-md">
                     <ShieldCheck className="w-4 h-4 text-amber-500" />
                 </div>

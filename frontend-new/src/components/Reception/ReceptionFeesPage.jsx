@@ -93,13 +93,13 @@ const ReceptionFeesPage = () => {
 
     return (
         <main className="space-y-8" aria-labelledby="fees-title">
-            <h1 id="fees-title" className="text-4xl font-extrabold bg-gradient-to-r from-cyan-400 to-purple-500 bg-clip-text text-transparent">
+            <h1 id="fees-title" className="text-4xl font-extrabold bg-gradient-to-r from-blue-400 to-sky-500 bg-clip-text text-transparent">
                 Fees
             </h1>
 
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-                <section className="bg-indigo-950/50 backdrop-blur-md rounded-2xl border border-cyan-400/30 p-6" aria-labelledby="collect-fee-title">
-                    <h2 id="collect-fee-title" className="text-2xl font-semibold text-cyan-300 mb-4">Collect Fee</h2>
+                <section className="bg-blue-950/50 backdrop-blur-md rounded-2xl border border-blue-400/30 p-6" aria-labelledby="collect-fee-title">
+                    <h2 id="collect-fee-title" className="text-2xl font-semibold text-blue-300 mb-4">Collect Fee</h2>
 
                     <form onSubmit={submitCollect} className="space-y-4">
                         <div className="space-y-1">
@@ -169,7 +169,7 @@ const ReceptionFeesPage = () => {
                         <button
                             type="submit"
                             disabled={collectLoading}
-                            className="w-full py-4 bg-gradient-to-r from-purple-600 to-cyan-600 rounded-xl text-white font-bold hover:shadow-lg transition"
+                            className="w-full py-4 bg-gradient-to-r from-sky-600 to-blue-600 rounded-xl text-white font-bold hover:shadow-lg transition"
                             aria-label={collectLoading ? 'Processing fee collection…' : 'Collect Fee'}
                         >
                             {collectLoading ? 'Processing…' : 'Collect Fee'}
@@ -186,7 +186,7 @@ const ReceptionFeesPage = () => {
                                 </div>
                                 {/* ... rest of result content remains same ... */}
                                 {collectResult.fees && (
-                                    <div className="bg-black/30 p-4 rounded-2xl border border-cyan-400/10">
+                                    <div className="bg-black/30 p-4 rounded-2xl border border-blue-400/10">
                                         <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-3">
                                             <div>
                                                 <p className="text-gray-100 font-semibold">
@@ -232,8 +232,8 @@ const ReceptionFeesPage = () => {
                     </div>
                 </section>
 
-                <section className="bg-indigo-950/50 backdrop-blur-md rounded-2xl border border-cyan-400/30 p-6" aria-labelledby="status-check-title">
-                    <h2 id="status-check-title" className="text-2xl font-semibold text-cyan-300 mb-4">Student Fee Status</h2>
+                <section className="bg-blue-950/50 backdrop-blur-md rounded-2xl border border-blue-400/30 p-6" aria-labelledby="status-check-title">
+                    <h2 id="status-check-title" className="text-2xl font-semibold text-blue-300 mb-4">Student Fee Status</h2>
 
                     <form onSubmit={fetchStatus} className="flex flex-col md:flex-row gap-4">
                         <div className="flex-1 space-y-1">
@@ -251,7 +251,7 @@ const ReceptionFeesPage = () => {
                         <button
                             type="submit"
                             disabled={statusLoading}
-                            className="md:mt-6 py-4 px-6 bg-gradient-to-r from-purple-600 to-cyan-600 rounded-xl text-white font-bold hover:shadow-lg transition"
+                            className="md:mt-6 py-4 px-6 bg-gradient-to-r from-sky-600 to-blue-600 rounded-xl text-white font-bold hover:shadow-lg transition"
                             aria-label={statusLoading ? 'Fetching fee status…' : 'Check status'}
                         >
                             {statusLoading ? 'Loading…' : 'Check'}
@@ -261,13 +261,13 @@ const ReceptionFeesPage = () => {
                     <div aria-live="polite" aria-atomic="true">
                         {statusResult && (
                             <div className="mt-6 space-y-4">
-                                <div className="bg-black/30 p-4 rounded-2xl border border-cyan-400/10" role="status">
+                                <div className="bg-black/30 p-4 rounded-2xl border border-blue-400/10" role="status">
                                     <p className="text-gray-200 font-semibold">
                                         {statusResult.student?.name} ({statusResult.student?.rollNo}) — {statusResult.student?.className}
                                     </p>
                                 </div>
 
-                                <div className="bg-black/30 rounded-2xl border border-cyan-400/10 overflow-hidden">
+                                <div className="bg-black/30 rounded-2xl border border-blue-400/10 overflow-hidden">
                                     <div className="flex items-center justify-between p-4 border-b border-white/10">
                                         <p className="text-gray-100 font-semibold">Fee Records</p>
                                         <p className="text-gray-300 text-sm">

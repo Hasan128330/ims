@@ -19,28 +19,28 @@ const Sidebar = ({ role, isOpen, setIsOpen }) => {
     // Yahan hum sirf Admin role ke links dikha rahe hain
     const links = adminNavLinks;
 
-    const baseClasses = 'flex items-center p-3 rounded-xl transition-all duration-300 backdrop-blur-sm';
-    const activeClasses = 'bg-gradient-to-r from-purple-600 to-cyan-600 text-white font-semibold shadow-2xl border border-cyan-400/50';
-    const inactiveClasses = 'text-gray-300 hover:bg-indigo-800/50 hover:text-cyan-300 hover:shadow-lg hover:border-cyan-400/30';
+    const baseClasses = 'flex items-center p-3 rounded-xl transition-all duration-300';
+    const activeClasses = 'bg-gradient-to-r from-blue-600 to-sky-500 text-white font-semibold shadow-lg shadow-blue-500/30 border border-blue-400/50';
+    const inactiveClasses = 'text-blue-100 hover:bg-blue-800/60 hover:text-sky-300 hover:shadow-lg';
 
     // Agar role admin nahi hai to kuch nahi dikhega
     if (role !== 'admin') return null;
 
     return (
-        <div className={`w-64 bg-gradient-to-b from-slate-900 to-indigo-950 text-white flex flex-col h-screen 
-         fixed border-r border-indigo-700/20 shadow-2xl z-50 transition-transform duration-300 lg:translate-x-0 ${
+        <div className={`w-64 bg-gradient-to-b from-blue-950 via-blue-900 to-blue-950 text-white flex flex-col h-screen
+         fixed border-r border-blue-700/30 shadow-2xl z-50 transition-transform duration-300 lg:translate-x-0 ${
            isOpen ? 'translate-x-0' : '-translate-x-full'
          }`}>
 
             {/* Logo/Title */}
-            <div className='p-4 border-b border-indigo-700/50 flex items-center justify-between'>
-                <h1 className='text-2xl font-extrabold flex items-center bg-gradient-to-r from-cyan-400 
-                 to-purple-500 bg-clip-text text-transparent'>
-                    <AcademicCapIcon className='w-7 h-7 mr-2 text-cyan-400' />
-                    AZ Coaching
+            <div className='p-4 border-b border-blue-700/40 flex items-center justify-between'>
+                <h1 className='text-base font-extrabold flex items-center bg-gradient-to-r from-blue-400
+                 to-sky-300 bg-clip-text text-transparent leading-tight'>
+                    <AcademicCapIcon className='w-7 h-7 mr-2 text-sky-400 flex-shrink-0' />
+                    The Fort Of Science And Commerce Education
                 </h1>
                 {/* Close Button for Mobile */}
-                <button 
+                <button
                     onClick={() => setIsOpen(false)}
                     className="lg:hidden p-1 text-gray-400 hover:text-white transition-colors"
                     aria-label="Close sidebar menu"
@@ -70,12 +70,12 @@ const Sidebar = ({ role, isOpen, setIsOpen }) => {
             </nav>
 
             {/* Logout Button */}
-            <div className='p-4 border-t border-indigo-700/50'>
+            <div className='p-4 border-t border-blue-700/40'>
                 <button
                     onClick={logoutUser}
                     className='w-full text-left p-3 rounded-xl text-white
-                    bg-gradient-to-r from-red-700 to-red-500 hover:from-red-800 
-                    hover:to-red-600 transition-all duration-300 flex items-center justify-center 
+                    bg-gradient-to-r from-red-700 to-red-500 hover:from-red-800
+                    hover:to-red-600 transition-all duration-300 flex items-center justify-center
                     shadow-lg hover:shadow-2xl transform hover:scale-105'
                     aria-label="Log out"
                 >

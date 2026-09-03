@@ -67,7 +67,7 @@ const TeachersPage = () => {
     // Delete Function
     const handleDelete = async (teacherRegId) => {
         if (!window.confirm(`Are you sure you want to delete this teacher ${teacherRegId}?`)) return;
-        
+
         const toastId = toast.loading('Deleting teacher...');
         try {
             await axiosInstance.delete(`/admin/az-teachers/delete-teacher/${teacherRegId}`);
@@ -103,13 +103,13 @@ const TeachersPage = () => {
 
     return (
         <main className="space-y-8" aria-labelledby="teachers-title">
-            <h1 id="teachers-title" className="text-4xl font-extrabold bg-gradient-to-r from-cyan-400 to-purple-500 bg-clip-text text-transparent">
-                AZ Teachers ({displayedTeachers.length})
+            <h1 id="teachers-title" className="text-4xl font-extrabold bg-gradient-to-r from-blue-700 to-sky-500 bg-clip-text text-transparent">
+                Teachers ({displayedTeachers.length})
             </h1>
 
             {/* Filter Section */}
-            <section className="bg-indigo-950/50 backdrop-blur-md rounded-2xl border border-cyan-400/30 p-6" aria-labelledby="filter-title">
-                <h3 id="filter-title" className="text-xl font-semibold text-cyan-300 mb-4">Filter Teachers</h3>
+            <section className="bg-blue-950/50 backdrop-blur-md rounded-2xl border border-blue-400/30 p-6" aria-labelledby="filter-title">
+                <h3 id="filter-title" className="text-xl font-semibold text-blue-300 mb-4">Filter Teachers</h3>
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-4" role="search">
                     <div>
                         <label className="block text-sm text-gray-300 mb-2" htmlFor="class-select">Select Class</label>
@@ -117,7 +117,7 @@ const TeachersPage = () => {
                             id="class-select"
                             value={selectedClass}
                             onChange={handleClassChange}
-                            className="w-full px-4 py-3 bg-indigo-900/50 border border-cyan-400/30 rounded-xl text-white focus:ring-4 focus:ring-cyan-400/50"
+                            className="w-full px-4 py-3 bg-blue-900/50 border border-blue-400/30 rounded-xl text-white focus:ring-4 focus:ring-blue-400/50"
                             aria-label="Select class to filter teachers"
                         >
                             <option value="">All Classes</option>
@@ -138,7 +138,7 @@ const TeachersPage = () => {
                             onChange={(e) => setSelectedSubject(e.target.value)}
                             disabled={!selectedClass}
                             placeholder="e.g. computer"
-                            className="w-full px-4 py-3 bg-indigo-900/50 border border-cyan-400/30 rounded-xl text-white disabled:opacity-50"
+                            className="w-full px-4 py-3 bg-blue-900/50 border border-blue-400/30 rounded-xl text-white disabled:opacity-50"
                             aria-label="Enter subject to filter teachers"
                         />
                     </div>
@@ -164,19 +164,19 @@ const TeachersPage = () => {
                     <p className="text-center text-gray-400 text-xl" role="status">No teachers found for selected filter.</p>
                 ) : (
                     <div className="overflow-x-auto">
-                        <table className="w-full text-left border border-cyan-400/30 rounded-2xl overflow-hidden" aria-label="Teachers list">
-                            <thead className="bg-indigo-900/50">
+                        <table className="w-full text-left border border-blue-400/30 rounded-2xl overflow-hidden" aria-label="Teachers list">
+                            <thead className="bg-blue-900/50">
                                 <tr>
-                                    <th scope="col" className="p-4 text-cyan-300">Reg ID</th>
-                                    <th scope="col" className="p-4 text-cyan-300">Name</th>
-                                    <th scope="col" className="p-4 text-cyan-300">Classes</th>
-                                    <th scope="col" className="p-4 text-cyan-300">Subjects</th>
-                                    <th scope="col" className="p-4 text-cyan-300">Actions</th>
+                                    <th scope="col" className="p-4 text-blue-300">Reg ID</th>
+                                    <th scope="col" className="p-4 text-blue-300">Name</th>
+                                    <th scope="col" className="p-4 text-blue-300">Classes</th>
+                                    <th scope="col" className="p-4 text-blue-300">Subjects</th>
+                                    <th scope="col" className="p-4 text-blue-300">Actions</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 {displayedTeachers.map(teacher => (
-                                    <tr key={teacher._id} className="border-t border-cyan-400/20">
+                                    <tr key={teacher._id} className="border-t border-blue-400/20">
                                         <td className="p-4 text-white">{teacher.teacherRegId}</td>
                                         <td className="p-4 text-white">{teacher.teacherFullName}</td>
                                         <td className="p-4 text-gray-300">{teacher.classes.join(', ')}</td>

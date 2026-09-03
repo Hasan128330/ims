@@ -23,7 +23,7 @@ const LandingPage = () => {
     };
 
     return (
-        <div className="min-h-screen bg-[#F8FAFC] text-slate-900 font-sans selection:bg-indigo-100 selection:text-indigo-900">
+        <div className="min-h-screen bg-[#F8FAFC] text-slate-900 font-sans selection:bg-blue-100 selection:text-blue-900">
             {/* Background Pattern */}
             <div className="absolute inset-0 z-0 opacity-[0.03] pointer-events-none overflow-hidden">
                 <svg className="w-full h-full" viewBox="0 0 100 100" preserveAspectRatio="none">
@@ -41,18 +41,18 @@ const LandingPage = () => {
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <div className="flex justify-between items-center h-20">
                         <div className="flex items-center gap-3 group cursor-pointer">
-                            <div className="w-11 h-11 bg-indigo-600 rounded-xl flex items-center justify-center transform group-hover:rotate-6 transition-transform shadow-lg shadow-indigo-200">
+                            <div className="w-11 h-11 bg-blue-600 rounded-xl flex items-center justify-center transform group-hover:rotate-6 transition-transform shadow-lg shadow-blue-200">
                                 <BookOpen className="text-white w-6 h-6" />
                             </div>
-                            <span className="text-2xl font-black tracking-tighter text-slate-900">
-                                Edu<span className="text-indigo-600">Stream</span>
+                            <span className="text-xl font-black tracking-tight text-blue-950">
+                                The Fort Of <span className="text-blue-600">Science And Commerce Education</span>
                             </span>
                         </div>
                         <div className="hidden md:flex items-center gap-10">
-                            <a href="#features" className="text-sm font-semibold text-slate-600 hover:text-indigo-600 transition-colors">Features</a>
+                            <a href="#features" className="text-sm font-semibold text-slate-600 hover:text-blue-600 transition-colors">Features</a>
                             <Link
                                 to={getDashboardLink()}
-                                className="inline-flex items-center justify-center px-6 py-2.5 text-sm font-bold text-white bg-indigo-600 hover:bg-indigo-700 rounded-xl transition-all hover:shadow-xl hover:shadow-indigo-200 active:scale-95"
+                                className="inline-flex items-center justify-center px-6 py-2.5 text-sm font-bold text-white bg-blue-600 hover:bg-blue-700 rounded-xl transition-all hover:shadow-xl hover:shadow-blue-200 active:scale-95"
                                 aria-label={user ? "Go to Dashboard" : "Launch Portal"}
                             >
                                 {user ? "Go to Dashboard" : "Launch Portal"}
@@ -61,7 +61,7 @@ const LandingPage = () => {
                         <div className="md:hidden">
                             <Link
                                 to={getDashboardLink()}
-                                className="inline-flex items-center justify-center px-5 py-2 text-sm font-bold text-white bg-indigo-600 hover:bg-indigo-700 rounded-xl transition-all"
+                                className="inline-flex items-center justify-center px-5 py-2 text-sm font-bold text-white bg-blue-600 hover:bg-blue-700 rounded-xl transition-all"
                                 aria-label={user ? "Dashboard" : "Login"}
                             >
                                 {user ? "Dashboard" : "Login"}
@@ -77,16 +77,16 @@ const LandingPage = () => {
                     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                         <div className="lg:grid lg:grid-cols-12 lg:gap-16 items-center">
                             <div className="lg:col-span-6 space-y-10">
-                                <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-indigo-50 border border-indigo-100/50 text-indigo-700 text-xs font-bold uppercase tracking-widest animate-fade-in">
+                                <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-blue-50 border border-blue-100/50 text-blue-700 text-xs font-bold uppercase tracking-widest animate-fade-in">
                                     <span className="relative flex h-2 w-2">
-                                        <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-indigo-400 opacity-75"></span>
-                                        <span className="relative inline-flex rounded-full h-2 w-2 bg-indigo-500"></span>
+                                        <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-400 opacity-75"></span>
+                                        <span className="relative inline-flex rounded-full h-2 w-2 bg-blue-500"></span>
                                     </span>
                                     Academic Excellence 2026
                                 </div>
                                 <h1 className="text-5xl lg:text-[5.5rem] font-[900] tracking-tight text-slate-900 leading-[1] space-y-2">
                                     Modernizing <br />
-                                    <span className="text-transparent bg-clip-text bg-gradient-to-br from-indigo-600 via-violet-600 to-indigo-800">
+                                    <span className="text-transparent bg-clip-text bg-gradient-to-br from-blue-600 via-sky-600 to-blue-800">
                                         Education Hubs
                                     </span>
                                 </h1>
@@ -96,14 +96,14 @@ const LandingPage = () => {
                                 <div className="flex flex-col sm:flex-row gap-5">
                                     <Link
                                         to={getDashboardLink()}
-                                        className="group inline-flex items-center justify-center px-10 py-5 text-lg font-bold text-white bg-indigo-600 hover:bg-indigo-700 rounded-2xl transition-all hover:shadow-2xl hover:shadow-indigo-300/50 active:scale-95"
+                                        className="group inline-flex items-center justify-center px-10 py-5 text-lg font-bold text-white bg-blue-600 hover:bg-blue-700 rounded-2xl transition-all hover:shadow-2xl hover:shadow-blue-300/50 active:scale-95"
                                     >
                                         {user ? "Continue to Dashboard" : "Start Your Journey"}
                                         <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
                                     </Link>
                                     <a
                                         href="#features"
-                                        className="inline-flex items-center justify-center px-10 py-5 text-lg font-bold text-slate-700 bg-white border-2 border-slate-100 hover:border-indigo-200 hover:bg-slate-50 rounded-2xl transition-all active:scale-95"
+                                        className="inline-flex items-center justify-center px-10 py-5 text-lg font-bold text-slate-700 bg-white border-2 border-slate-100 hover:border-blue-200 hover:bg-slate-50 rounded-2xl transition-all active:scale-95"
                                     >
                                         Tour Features
                                     </a>
@@ -117,7 +117,7 @@ const LandingPage = () => {
                                                 <img src={`https://i.pravatar.cc/150?u=${i + 20}`} alt="User profile" className="w-full h-full object-cover" />
                                             </div>
                                         ))}
-                                        <div className="w-12 h-12 rounded-full border-4 border-white bg-indigo-600 flex items-center justify-center text-white text-xs font-bold shadow-sm">
+                                        <div className="w-12 h-12 rounded-full border-4 border-white bg-blue-600 flex items-center justify-center text-white text-xs font-bold shadow-sm">
                                             +1k
                                         </div>
                                     </div>
@@ -133,9 +133,9 @@ const LandingPage = () => {
                             </div>
 
                             <div className="hidden lg:block lg:col-span-6 relative">
-                                <div className="absolute -top-20 -right-20 w-[120%] h-[120%] bg-indigo-100/40 rounded-full blur-[100px] -z-10"></div>
+                                <div className="absolute -top-20 -right-20 w-[120%] h-[120%] bg-blue-100/40 rounded-full blur-[100px] -z-10"></div>
                                 <div className="relative group">
-                                    <div className="absolute -inset-2 bg-gradient-to-br from-indigo-500 to-violet-600 rounded-[2.5rem] blur-2xl opacity-20 group-hover:opacity-30 transition-opacity"></div>
+                                    <div className="absolute -inset-2 bg-gradient-to-br from-blue-500 to-sky-600 rounded-[2.5rem] blur-2xl opacity-20 group-hover:opacity-30 transition-opacity"></div>
                                     <div className="relative bg-white p-3 rounded-[2.5rem] shadow-2xl border border-slate-100 ring-1 ring-slate-900/5">
                                         <img
                                             src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&q=80&w=1200"
@@ -157,11 +157,11 @@ const LandingPage = () => {
                                         {/* Floating Feature Card */}
                                         <div className="absolute top-20 -right-12 bg-white/90 backdrop-blur-md p-5 rounded-2xl shadow-xl border border-white/50 space-y-3 max-w-[200px]">
                                             <div className="flex items-center gap-2">
-                                                <CheckCircle2 className="text-indigo-500 w-5 h-5" />
+                                                <CheckCircle2 className="text-blue-500 w-5 h-5" />
                                                 <span className="text-sm font-bold">AI Analytics</span>
                                             </div>
                                             <div className="h-2 w-full bg-slate-100 rounded-full overflow-hidden">
-                                                <div className="h-full w-[70%] bg-indigo-500"></div>
+                                                <div className="h-full w-[70%] bg-blue-500"></div>
                                             </div>
                                             <p className="text-[10px] text-slate-500 font-medium">Real-time performance tracking active</p>
                                         </div>
@@ -177,7 +177,7 @@ const LandingPage = () => {
                     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                         <div className="flex flex-col md:flex-row md:items-end justify-between mb-20 gap-8">
                             <div className="max-w-2xl space-y-4">
-                                <h2 className="text-indigo-600 font-black tracking-[0.2em] uppercase text-sm">Capabilities</h2>
+                                <h2 className="text-blue-600 font-black tracking-[0.2em] uppercase text-sm">Capabilities</h2>
                                 <p className="text-4xl lg:text-6xl font-[900] tracking-tight text-slate-900">Designed for the <br />Modern Classroom</p>
                             </div>
                             <p className="text-lg text-slate-500 max-w-md font-medium leading-relaxed">
@@ -209,13 +209,13 @@ const LandingPage = () => {
                                     title: "Fortified Security",
                                     desc: "Bank-grade security protocols with granular role-based permissions for total peace of mind.",
                                     icon: ShieldCheck,
-                                    color: "bg-indigo-50 text-indigo-600"
+                                    color: "bg-blue-50 text-blue-600"
                                 },
                                 {
                                     title: "AI Quiz Master",
                                     desc: "Leverage advanced AI to generate curriculum-aligned assessments in seconds.",
                                     icon: Zap,
-                                    color: "bg-violet-50 text-violet-600"
+                                    color: "bg-violet-50 text-sky-600"
                                 },
                                 {
                                     title: "Pulse Comms",
@@ -224,7 +224,7 @@ const LandingPage = () => {
                                     color: "bg-rose-50 text-rose-600"
                                 }
                             ].map((feature, idx) => (
-                                <div key={idx} className="group p-10 rounded-[2.5rem] border border-slate-100 bg-[#F8FAFC] hover:bg-white hover:shadow-2xl hover:shadow-indigo-100 hover:-translate-y-2 transition-all duration-500">
+                                <div key={idx} className="group p-10 rounded-[2.5rem] border border-slate-100 bg-[#F8FAFC] hover:bg-white hover:shadow-2xl hover:shadow-blue-100 hover:-translate-y-2 transition-all duration-500">
                                     <div className={`w-16 h-16 rounded-2xl ${feature.color} flex items-center justify-center mb-8 shadow-sm group-hover:scale-110 transition-transform`} aria-hidden="true">
                                         <feature.icon className="w-8 h-8" />
                                     </div>
@@ -239,24 +239,24 @@ const LandingPage = () => {
                 {/* CTA Section */}
                 <section className="py-32 relative">
                     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                        <div className="bg-indigo-600 rounded-[4rem] p-12 lg:p-24 overflow-hidden relative shadow-3xl">
+                        <div className="bg-blue-600 rounded-[4rem] p-12 lg:p-24 overflow-hidden relative shadow-3xl">
                             {/* Decorative Blobs */}
                             <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-white/10 rounded-full blur-[120px] -mr-64 -mt-64 animate-pulse"></div>
                             <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-black/10 rounded-full blur-[120px] -ml-64 -mb-64"></div>
 
                             <div className="relative z-10 text-center space-y-10">
                                 <h2 className="text-5xl lg:text-7xl font-black text-white tracking-tight">Ready for a <br />Digital Upgrade?</h2>
-                                <p className="text-xl text-indigo-100 max-w-2xl mx-auto font-medium">
-                                    Join the educational revolution. Get your campus on EduStream today and experience the difference.
+                                <p className="text-xl text-blue-100 max-w-2xl mx-auto font-medium">
+                                    Join the educational revolution. Get your campus on The Fort Of Science And Commerce Education portal today and experience the difference.
                                 </p>
                                 <div className="flex flex-col sm:flex-row justify-center gap-6 pt-6">
                                     <Link
                                         to="/login"
-                                        className="inline-flex items-center justify-center px-12 py-5 text-xl font-bold text-indigo-600 bg-white hover:bg-indigo-50 rounded-2xl transition-all hover:shadow-2xl active:scale-95"
+                                        className="inline-flex items-center justify-center px-12 py-5 text-xl font-bold text-blue-600 bg-white hover:bg-blue-50 rounded-2xl transition-all hover:shadow-2xl active:scale-95"
                                     >
                                         Get Started Free
                                     </Link>
-                                    <button className="inline-flex items-center justify-center px-12 py-5 text-xl font-bold text-white border-2 border-indigo-400 hover:bg-indigo-500 rounded-2xl transition-all active:scale-95">
+                                    <button className="inline-flex items-center justify-center px-12 py-5 text-xl font-bold text-white border-2 border-blue-400 hover:bg-blue-500 rounded-2xl transition-all active:scale-95">
                                         Talk to Expert
                                     </button>
                                 </div>
@@ -272,10 +272,10 @@ const LandingPage = () => {
                     <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-16 mb-24">
                         <div className="col-span-2 lg:col-span-2 space-y-8">
                             <div className="flex items-center gap-3">
-                                <div className="w-10 h-10 bg-indigo-600 rounded-xl flex items-center justify-center">
+                                <div className="w-10 h-10 bg-blue-600 rounded-xl flex items-center justify-center">
                                     <BookOpen className="text-white w-5 h-5" />
                                 </div>
-                                <span className="text-2xl font-black tracking-tighter text-slate-900">EduStream</span>
+                                <span className="text-2xl font-black tracking-tighter text-blue-950">The Fort Of Science And Commerce Education</span>
                             </div>
                             <p className="text-slate-500 max-w-sm leading-relaxed font-medium text-lg">
                                 The ecosystem that empowers educators and inspires students to reach their full potential.
@@ -283,7 +283,7 @@ const LandingPage = () => {
                             <div className="flex gap-4">
                                 {/* Social icons placeholder */}
                                 {[Globe, Smartphone, Smartphone, Smartphone].map((Icon, i) => (
-                                    <div key={i} className="w-10 h-10 rounded-full bg-slate-50 flex items-center justify-center text-slate-400 hover:text-indigo-600 hover:bg-indigo-50 transition-all cursor-pointer">
+                                    <div key={i} className="w-10 h-10 rounded-full bg-slate-50 flex items-center justify-center text-slate-400 hover:text-blue-600 hover:bg-blue-50 transition-all cursor-pointer">
                                         <Icon className="w-5 h-5" />
                                     </div>
                                 ))}
@@ -292,34 +292,34 @@ const LandingPage = () => {
                         <div>
                             <h4 className="font-black text-slate-900 mb-8 uppercase tracking-widest text-xs">Platform</h4>
                             <ul className="space-y-5 text-slate-500 font-semibold">
-                                <li><a href="#" className="hover:text-indigo-600 transition-colors">Core Features</a></li>
-                                <li><a href="#" className="hover:text-indigo-600 transition-colors">Integrations</a></li>
-                                <li><a href="#" className="hover:text-indigo-600 transition-colors">Mobile App</a></li>
+                                <li><a href="#" className="hover:text-blue-600 transition-colors">Core Features</a></li>
+                                <li><a href="#" className="hover:text-blue-600 transition-colors">Integrations</a></li>
+                                <li><a href="#" className="hover:text-blue-600 transition-colors">Mobile App</a></li>
                             </ul>
                         </div>
                         <div>
                             <h4 className="font-black text-slate-900 mb-8 uppercase tracking-widest text-xs">Company</h4>
                             <ul className="space-y-5 text-slate-500 font-semibold">
-                                <li><a href="#" className="hover:text-indigo-600 transition-colors">Our Vision</a></li>
-                                <li><a href="#" className="hover:text-indigo-600 transition-colors">Careers</a></li>
-                                <li><a href="#" className="hover:text-indigo-600 transition-colors">Press Kit</a></li>
+                                <li><a href="#" className="hover:text-blue-600 transition-colors">Our Vision</a></li>
+                                <li><a href="#" className="hover:text-blue-600 transition-colors">Careers</a></li>
+                                <li><a href="#" className="hover:text-blue-600 transition-colors">Press Kit</a></li>
                             </ul>
                         </div>
                         <div>
                             <h4 className="font-black text-slate-900 mb-8 uppercase tracking-widest text-xs">Resources</h4>
                             <ul className="space-y-5 text-slate-500 font-semibold">
-                                <li><a href="#" className="hover:text-indigo-600 transition-colors">Documentation</a></li>
-                                <li><a href="#" className="hover:text-indigo-600 transition-colors">Support Center</a></li>
-                                <li><a href="#" className="hover:text-indigo-600 transition-colors">Community</a></li>
+                                <li><a href="#" className="hover:text-blue-600 transition-colors">Documentation</a></li>
+                                <li><a href="#" className="hover:text-blue-600 transition-colors">Support Center</a></li>
+                                <li><a href="#" className="hover:text-blue-600 transition-colors">Community</a></li>
                             </ul>
                         </div>
                     </div>
                     <div className="pt-12 border-t border-slate-100 flex flex-col md:flex-row justify-between items-center gap-8">
-                        <p className="text-slate-400 font-bold text-sm">© 2026 EduStream ERP. Building the future of education.</p>
+                        <p className="text-slate-400 font-bold text-sm">© 2026 The Fort Of Science And Commerce Education. Building the future of education.</p>
                         <div className="flex gap-10 text-sm font-bold text-slate-400">
-                            <a href="#" className="hover:text-indigo-600 transition-colors">Privacy</a>
-                            <a href="#" className="hover:text-indigo-600 transition-colors">Terms</a>
-                            <a href="#" className="hover:text-indigo-600 transition-colors">Cookies</a>
+                            <a href="#" className="hover:text-blue-600 transition-colors">Privacy</a>
+                            <a href="#" className="hover:text-blue-600 transition-colors">Terms</a>
+                            <a href="#" className="hover:text-blue-600 transition-colors">Cookies</a>
                         </div>
                     </div>
                 </div>

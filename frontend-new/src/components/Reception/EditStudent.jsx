@@ -52,8 +52,8 @@ const EditStudent = ({ student, onClose, onSuccess }) => {
 
     return (
         <div className="fixed inset-0 bg-black/70 backdrop-blur-sm flex items-center justify-center z-50" role="dialog" aria-modal="true" aria-labelledby="edit-student-title">
-            <div className="bg-indigo-950/90 backdrop-blur-xl rounded-3xl border border-cyan-400/40 p-8 w-full max-w-4xl my-8 shadow-2xl max-h-[90vh] overflow-y-auto">
-                <h2 id="edit-student-title" className="text-3xl font-bold bg-gradient-to-r from-cyan-400 to-purple-500 bg-clip-text text-transparent mb-8 text-center">
+            <div className="bg-blue-950/90 backdrop-blur-xl rounded-3xl border border-blue-400/40 p-8 w-full max-w-4xl my-8 shadow-2xl max-h-[90vh] overflow-y-auto">
+                <h2 id="edit-student-title" className="text-3xl font-bold bg-gradient-to-r from-blue-400 to-sky-500 bg-clip-text text-transparent mb-8 text-center">
                     Edit Student ({student.rollNo})
                 </h2>
 
@@ -101,13 +101,13 @@ const EditStudent = ({ student, onClose, onSuccess }) => {
                             name="isActive"
                             checked={!!formData.isActive}
                             onChange={handleChange}
-                            className="h-5 w-5 accent-cyan-400"
+                            className="h-5 w-5 accent-blue-400"
                         />
                         Active
                     </label>
 
                     <div className="md:col-span-2 flex gap-4 pt-6">
-                        <button type="submit" disabled={loading} className="flex-1 py-4 bg-gradient-to-r from-purple-600 to-cyan-600 rounded-xl text-white font-bold hover:shadow-lg transition">
+                        <button type="submit" disabled={loading} className="flex-1 py-4 bg-gradient-to-r from-sky-600 to-blue-600 rounded-xl text-white font-bold hover:shadow-lg transition">
                             {loading ? 'Saving…' : 'Save Changes'}
                         </button>
                         <button type="button" onClick={onClose} className="flex-1 py-4 bg-gray-700/50 rounded-xl text-white hover:bg-gray-600/50 transition">

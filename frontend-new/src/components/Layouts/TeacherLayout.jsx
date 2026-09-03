@@ -13,7 +13,7 @@ const TeacherLayout = () => {
     const toggleSidebar = () => setIsSidebarOpen(!isSidebarOpen);
 
     return (
-        <div className="flex h-screen bg-gradient-to-br from-slate-900 to-indigo-950 overflow-hidden relative">
+        <div className="flex h-screen bg-gradient-to-br from-slate-900 to-blue-950 overflow-hidden relative">
             {/* Overlay for mobile when sidebar is open */}
             {isSidebarOpen && (
                 <div 
@@ -29,18 +29,18 @@ const TeacherLayout = () => {
             <TeacherSidebar isOpen={isSidebarOpen} setIsOpen={setIsSidebarOpen} />
 
             <div className="flex-1 flex flex-col min-w-0 transition-all duration-300 lg:ml-64">
-                <header className="flex items-center justify-between p-4 bg-gradient-to-r from-slate-900 to-indigo-950 shadow-2xl border-b border-indigo-700/50 text-white sticky top-0 z-30">
+                <header className="flex items-center justify-between p-4 bg-gradient-to-r from-slate-900 to-blue-950 shadow-2xl border-b border-blue-700/50 text-white sticky top-0 z-30">
                     <div className="flex items-center gap-4">
                         {/* Mobile Sidebar Toggle */}
                         <button 
                             onClick={toggleSidebar}
-                            className="p-2 rounded-md text-cyan-400 lg:hidden hover:bg-indigo-800/50 transition"
+                            className="p-2 rounded-md text-blue-400 lg:hidden hover:bg-blue-800/50 transition"
                             aria-label="Toggle sidebar menu"
                             aria-expanded={isSidebarOpen}
                         >
                             <Bars3Icon className="w-6 h-6" aria-hidden="true" />
                         </button>
-                        <h2 className="text-xl font-extrabold bg-gradient-to-r from-cyan-400 to-purple-500 bg-clip-text text-transparent hidden sm:block">
+                        <h2 className="text-xl font-extrabold bg-gradient-to-r from-blue-400 to-sky-500 bg-clip-text text-transparent hidden sm:block">
                             Welcome, {userName}!
                         </h2>
                     </div>
@@ -49,8 +49,8 @@ const TeacherLayout = () => {
                         {/* Notifications */}
                         <AnnouncementBell />
 
-                        <div className="flex items-center space-x-2 border-l border-indigo-700/50 pl-4" aria-label={`Logged in as ${userName}`}>
-                            <UserCircleIcon className="w-8 h-8 text-cyan-400" aria-hidden="true" />
+                        <div className="flex items-center space-x-2 border-l border-blue-700/50 pl-4" aria-label={`Logged in as ${userName}`}>
+                            <UserCircleIcon className="w-8 h-8 text-blue-400" aria-hidden="true" />
                             <span className="text-sm font-medium text-gray-300 hidden md:block">
                                 {userName}
                             </span>

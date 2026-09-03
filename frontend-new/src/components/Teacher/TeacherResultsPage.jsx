@@ -86,12 +86,12 @@ const TeacherResultsPage = () => {
 
     return (
         <div className="space-y-8">
-            <h1 className="text-4xl font-extrabold bg-gradient-to-r from-cyan-400 to-purple-500 bg-clip-text text-transparent">
+            <h1 className="text-4xl font-extrabold bg-gradient-to-r from-blue-400 to-sky-500 bg-clip-text text-transparent">
                 Results
             </h1>
 
-            <div className="bg-indigo-950/50 backdrop-blur-md rounded-2xl border border-cyan-400/30 p-6">
-                <h2 className="text-2xl font-semibold text-cyan-300 mb-4">Upload Result Image</h2>
+            <div className="bg-blue-950/50 backdrop-blur-md rounded-2xl border border-blue-400/30 p-6">
+                <h2 className="text-2xl font-semibold text-blue-300 mb-4">Upload Result Image</h2>
 
                 {uploadError && (
                     <div className="p-3 mb-4 text-sm text-red-300 bg-red-900/30 rounded-2xl border border-red-500/30" role="alert" aria-live="assertive">
@@ -135,7 +135,7 @@ const TeacherResultsPage = () => {
                         <button
                             type="submit"
                             disabled={uploadLoading || !uploadForm.file}
-                            className="w-full py-4 bg-gradient-to-r from-purple-600 to-cyan-600 rounded-xl text-white font-bold hover:shadow-lg transition"
+                            className="w-full py-4 bg-gradient-to-r from-sky-600 to-blue-600 rounded-xl text-white font-bold hover:shadow-lg transition"
                             aria-label={uploadLoading ? 'Uploading result...' : 'Upload result'}
                         >
                             {uploadLoading ? 'Uploading…' : 'Upload'}
@@ -144,18 +144,18 @@ const TeacherResultsPage = () => {
                 </form>
 
                 {uploadResult && (
-                    <pre className="mt-5 text-sm text-gray-300 bg-black/30 p-4 rounded-2xl overflow-x-auto border border-cyan-400/10" aria-label="Upload Result Details">
+                    <pre className="mt-5 text-sm text-gray-300 bg-black/30 p-4 rounded-2xl overflow-x-auto border border-blue-400/10" aria-label="Upload Result Details">
                         {JSON.stringify(uploadResult, null, 2)}
                     </pre>
                 )}
             </div>
 
-            <div className="bg-indigo-950/50 backdrop-blur-md rounded-2xl border border-cyan-400/30 p-6">
+            <div className="bg-blue-950/50 backdrop-blur-md rounded-2xl border border-blue-400/30 p-6">
                 <div className="flex items-center justify-between gap-4">
-                    <h2 className="text-2xl font-semibold text-cyan-300">All Results</h2>
+                    <h2 className="text-2xl font-semibold text-blue-300">All Results</h2>
                     <button
                         onClick={fetchAll}
-                        className="py-3 px-6 rounded-2xl bg-indigo-800/60 hover:bg-indigo-800 text-white font-bold transition"
+                        className="py-3 px-6 rounded-2xl bg-blue-800/60 hover:bg-blue-800 text-white font-bold transition"
                         aria-label="Refresh results list"
                     >
                         Refresh
@@ -170,18 +170,18 @@ const TeacherResultsPage = () => {
                     <p className="text-gray-300 mt-4" aria-live="polite">No results uploaded yet.</p>
                 ) : (
                     <div className="overflow-x-auto mt-4">
-                        <table className="w-full text-left border border-cyan-400/30 rounded-2xl overflow-hidden" aria-label="Test Results Table">
-                            <thead className="bg-indigo-900/50">
+                        <table className="w-full text-left border border-blue-400/30 rounded-2xl overflow-hidden" aria-label="Test Results Table">
+                            <thead className="bg-blue-900/50">
                                 <tr>
-                                    <th scope="col" className="p-4 text-cyan-300">Class</th>
-                                    <th scope="col" className="p-4 text-cyan-300">Test</th>
-                                    <th scope="col" className="p-4 text-cyan-300">Image</th>
-                                    <th scope="col" className="p-4 text-cyan-300">Actions</th>
+                                    <th scope="col" className="p-4 text-blue-300">Class</th>
+                                    <th scope="col" className="p-4 text-blue-300">Test</th>
+                                    <th scope="col" className="p-4 text-blue-300">Image</th>
+                                    <th scope="col" className="p-4 text-blue-300">Actions</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 {results.map(r => (
-                                    <tr key={r._id} className="border-t border-cyan-400/20">
+                                    <tr key={r._id} className="border-t border-blue-400/20">
                                         <td className="p-4 text-white">{r.className}</td>
                                         <td className="p-4 text-gray-200">{r.testName}</td>
                                         <td className="p-4">
@@ -189,7 +189,7 @@ const TeacherResultsPage = () => {
                                                 href={r.imageUrl}
                                                 target="_blank"
                                                 rel="noreferrer"
-                                                className="text-cyan-300 hover:text-cyan-200 underline"
+                                                className="text-blue-300 hover:text-blue-200 underline"
                                                 aria-label={`Open result image for ${r.testName} class ${r.className}`}
                                             >
                                                 Open

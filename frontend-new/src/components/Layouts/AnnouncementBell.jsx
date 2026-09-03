@@ -125,11 +125,11 @@ const AnnouncementBell = ({ classNameProp }) => {
                 right: dropdownPos.right,
                 zIndex: 99999,
             }}
-            className="w-80 sm:w-96 rounded-2xl border border-cyan-400/20 bg-gradient-to-br from-slate-900 via-indigo-950 to-slate-900 shadow-2xl shadow-cyan-500/10 overflow-hidden"
+            className="w-80 sm:w-96 rounded-2xl border border-blue-400/20 bg-gradient-to-br from-slate-900 via-blue-950 to-slate-900 shadow-2xl shadow-blue-500/10 overflow-hidden"
         >
             {/* Header */}
             <div className="flex items-center justify-between px-4 py-3 border-b border-white/10">
-                <h3 className="text-sm font-bold bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text text-transparent">
+                <h3 className="text-sm font-bold bg-gradient-to-r from-blue-400 to-sky-400 bg-clip-text text-transparent">
                     📢 Announcements
                 </h3>
                 <span className="text-xs text-gray-500">{announcements.length} total</span>
@@ -160,8 +160,8 @@ const AnnouncementBell = ({ classNameProp }) => {
                                 </p>
                                 <span className={`flex-shrink-0 text-[10px] font-semibold px-2 py-0.5 rounded-full border ${
                                     ann.target === 'all'
-                                        ? 'bg-cyan-500/20 text-cyan-300 border-cyan-400/30'
-                                        : 'bg-purple-500/20 text-purple-300 border-purple-400/30'
+                                        ? 'bg-blue-500/20 text-blue-300 border-blue-400/30'
+                                        : 'bg-sky-500/20 text-sky-300 border-sky-400/30'
                                 }`}>
                                     {ann.target === 'all' ? 'All' : ann.className}
                                 </span>
@@ -189,7 +189,7 @@ const AnnouncementBell = ({ classNameProp }) => {
             {/* Bell Button */}
             <button
                 onClick={handleOpen}
-                className="relative p-2 text-cyan-400 hover:text-purple-400 hover:bg-indigo-800/50 rounded-full transition"
+                className="relative p-2 text-blue-400 hover:text-sky-400 hover:bg-blue-800/50 rounded-full transition"
                 aria-label="View announcements"
             >
                 <BellIcon className="w-6 h-6" aria-hidden="true" />

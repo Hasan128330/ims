@@ -64,7 +64,7 @@ const GenerateQuiz = () => {
 
                 <div
                     className="max-w-4xl mx-auto
-                bg-indigo-950/50 border border-cyan-400/20
+                bg-blue-950/50 border border-blue-400/20
                 rounded-3xl p-6 md:p-10 shadow-2xl"
                 >
 
@@ -73,7 +73,7 @@ const GenerateQuiz = () => {
 
                         <div>
 
-                            <h1 className="text-3xl font-black text-cyan-400">
+                            <h1 className="text-3xl font-black text-blue-400">
                                 {quizData.topic}
                             </h1>
 
@@ -85,8 +85,8 @@ const GenerateQuiz = () => {
 
                         <div
                             className="px-4 py-2 rounded-2xl
-                        bg-purple-500/20 border border-purple-400/30
-                        text-purple-300 font-bold capitalize"
+                        bg-sky-500/20 border border-sky-400/30
+                        text-sky-300 font-bold capitalize"
                         >
                             {quizData.difficulty}
                         </div>
@@ -96,7 +96,7 @@ const GenerateQuiz = () => {
                     {/* Question Card */}
                     <div
                         className="bg-black/20 rounded-3xl
-                    border border-indigo-700 p-8"
+                    border border-blue-700 p-8"
                     >
 
                         <h2 className="text-2xl font-bold text-white leading-relaxed">
@@ -124,8 +124,8 @@ const GenerateQuiz = () => {
                                         className={`w-full text-left p-5 rounded-2xl
                                     border transition-all duration-300
                                     ${isSelected
-                                                ? 'border-cyan-400 bg-cyan-500/20'
-                                                : 'border-indigo-700 bg-indigo-900/30 hover:border-cyan-400'
+                                                ? 'border-blue-400 bg-blue-500/20'
+                                                : 'border-blue-700 bg-blue-900/30 hover:border-blue-400'
                                             }`}
                                     >
 
@@ -136,8 +136,8 @@ const GenerateQuiz = () => {
                                             flex items-center justify-center
                                             font-black
                                             ${isSelected
-                                                        ? 'bg-cyan-400 text-black'
-                                                        : 'bg-indigo-950 text-cyan-400'
+                                                        ? 'bg-blue-400 text-black'
+                                                        : 'bg-blue-950 text-blue-400'
                                                     }`}
                                             >
                                                 {String.fromCharCode(65 + index)}
@@ -167,7 +167,7 @@ const GenerateQuiz = () => {
                                 setCurrentQuestion(currentQuestion - 1)
                             }
                             className="px-6 py-3 rounded-2xl
-                        bg-indigo-900/50 border border-indigo-700
+                        bg-blue-900/50 border border-blue-700
                         disabled:opacity-40"
                         >
                             Previous
@@ -180,7 +180,7 @@ const GenerateQuiz = () => {
                                     setCurrentQuestion(currentQuestion + 1)
                                 }
                                 className="px-6 py-3 rounded-2xl
-                            bg-gradient-to-r from-cyan-500 to-purple-600
+                            bg-gradient-to-r from-blue-500 to-sky-600
                             font-bold"
                             >
                                 Next
@@ -218,7 +218,7 @@ const GenerateQuiz = () => {
 
                                 }}
                                 className="px-6 py-3 rounded-2xl
-                            bg-gradient-to-r from-emerald-500 to-cyan-500
+                            bg-gradient-to-r from-emerald-500 to-blue-500
                             font-black"
                             >
                                 Submit Quiz
@@ -238,9 +238,9 @@ const GenerateQuiz = () => {
         return (
             <div className="p-6 text-white max-w-3xl mx-auto">
 
-                <div className="bg-indigo-950/50 border border-cyan-400/20 rounded-3xl p-8 text-center">
+                <div className="bg-blue-950/50 border border-blue-400/20 rounded-3xl p-8 text-center">
 
-                    <h1 className="text-3xl font-black text-cyan-400 mb-4">
+                    <h1 className="text-3xl font-black text-blue-400 mb-4">
                         Quiz Results
                     </h1>
 
@@ -283,7 +283,7 @@ const GenerateQuiz = () => {
                             setSelectedAnswers({});
                             setScore(0);
                         }}
-                        className="mt-6 px-6 py-3 bg-cyan-500 rounded-2xl font-bold"
+                        className="mt-6 px-6 py-3 bg-blue-500 rounded-2xl font-bold"
                     >
                         Try Another Quiz
                     </button>
@@ -299,16 +299,16 @@ const GenerateQuiz = () => {
             {/* HERO SECTION */}
             <div
                 className="relative overflow-hidden
-                bg-gradient-to-br from-indigo-950/70
-                via-indigo-900/60 to-purple-950/70
-                border border-cyan-400/20
+                bg-gradient-to-br from-blue-950/70
+                via-blue-900/60 to-sky-950/70
+                border border-blue-400/20
                 rounded-3xl p-6 md:p-10
                 shadow-2xl backdrop-blur-md"
             >
 
                 {/* Glow Effects */}
-                <div className="absolute top-0 right-0 w-72 h-72 bg-cyan-500/10 blur-3xl rounded-full"></div>
-                <div className="absolute bottom-0 left-0 w-72 h-72 bg-purple-500/10 blur-3xl rounded-full"></div>
+                <div className="absolute top-0 right-0 w-72 h-72 bg-blue-500/10 blur-3xl rounded-full"></div>
+                <div className="absolute bottom-0 left-0 w-72 h-72 bg-sky-500/10 blur-3xl rounded-full"></div>
 
                 <div className="relative z-10">
 
@@ -317,17 +317,17 @@ const GenerateQuiz = () => {
 
                         <div
                             className="p-4 rounded-2xl
-                            bg-cyan-500/10
-                            border border-cyan-400/30"
+                            bg-blue-500/10
+                            border border-blue-400/30"
                         >
-                            <CpuChipIcon className="w-10 h-10 text-cyan-400" />
+                            <CpuChipIcon className="w-10 h-10 text-blue-400" />
                         </div>
 
                         <div>
                             <h1
                                 className="text-3xl md:text-3xl font-black
-                                bg-gradient-to-r from-cyan-400
-                                via-blue-400 to-purple-500
+                                bg-gradient-to-r from-blue-400
+                                via-blue-400 to-sky-500
                                 bg-clip-text text-transparent"
                             >
                                 AI MCQs Generator
@@ -346,8 +346,8 @@ const GenerateQuiz = () => {
                         {/* FORM SECTION */}
                         <div
                             className="lg:col-span-2
-                            bg-indigo-900/40
-                            border border-cyan-400/20
+                            bg-blue-900/40
+                            border border-blue-400/20
                             rounded-3xl p-6 md:p-8"
                         >
 
@@ -356,7 +356,7 @@ const GenerateQuiz = () => {
 
                                 <label
                                     className="block text-sm font-bold
-                                    text-cyan-400 uppercase
+                                    text-blue-400 uppercase
                                     tracking-widest mb-3"
                                 >
                                     Quiz Topic
@@ -368,9 +368,9 @@ const GenerateQuiz = () => {
                                     onChange={(e) => setTopic(e.target.value)}
                                     placeholder="Enter any topic..."
                                     className="w-full bg-black/30
-                                    border border-indigo-700
+                                    border border-blue-700
                                     rounded-2xl px-5 py-4
-                                    outline-none focus:border-cyan-400
+                                    outline-none focus:border-blue-400
                                     text-white"
                                 />
 
@@ -381,7 +381,7 @@ const GenerateQuiz = () => {
 
                                 <label
                                     className="block text-sm font-bold
-                                    text-purple-400 uppercase
+                                    text-sky-400 uppercase
                                     tracking-widest mb-3"
                                 >
                                     Difficulty
@@ -398,8 +398,8 @@ const GenerateQuiz = () => {
                                             font-bold capitalize
                                             transition-all duration-300
                                             ${difficulty === level
-                                                    ? 'bg-gradient-to-r from-cyan-500 to-purple-600 text-white shadow-lg'
-                                                    : 'bg-indigo-900/50 border border-indigo-700 text-gray-300 hover:border-cyan-400'
+                                                    ? 'bg-gradient-to-r from-blue-500 to-sky-600 text-white shadow-lg'
+                                                    : 'bg-blue-900/50 border border-blue-700 text-gray-300 hover:border-blue-400'
                                                 }`}
                                         >
                                             {level}
@@ -433,8 +433,8 @@ const GenerateQuiz = () => {
                                             font-black text-lg
                                             transition-all duration-300
                                             ${count === num
-                                                    ? 'bg-gradient-to-r from-emerald-500 to-cyan-500 text-white shadow-lg'
-                                                    : 'bg-indigo-900/50 border border-indigo-700 text-gray-300 hover:border-emerald-400'
+                                                    ? 'bg-gradient-to-r from-emerald-500 to-blue-500 text-white shadow-lg'
+                                                    : 'bg-blue-900/50 border border-blue-700 text-gray-300 hover:border-emerald-400'
                                                 }`}
                                         >
                                             {num}
@@ -451,8 +451,8 @@ const GenerateQuiz = () => {
                                 onClick={handleGenerateQuiz}
                                 disabled={loading}
                                 className="w-full
-                                bg-gradient-to-r from-cyan-500
-                                via-blue-500 to-purple-600
+                                bg-gradient-to-r from-blue-500
+                                via-blue-500 to-sky-600
                                 hover:scale-[1.02]
                                 transition-transform duration-300
                                 py-5 rounded-2xl
@@ -479,12 +479,12 @@ const GenerateQuiz = () => {
 
                         {/* INFO CARD */}
                         <div
-                            className="bg-indigo-900/40
-                            border border-purple-400/20
+                            className="bg-blue-900/40
+                            border border-sky-400/20
                             rounded-3xl p-6 md:p-8"
                         >
 
-                            <h3 className="text-2xl font-black text-purple-400 mb-6">
+                            <h3 className="text-2xl font-black text-sky-400 mb-6">
                                 Smart Learning
                             </h3>
 
@@ -492,9 +492,9 @@ const GenerateQuiz = () => {
 
                                 <div
                                     className="bg-black/20 rounded-2xl
-                                    p-4 border border-cyan-400/10"
+                                    p-4 border border-blue-400/10"
                                 >
-                                    <h4 className="text-cyan-400 font-bold mb-2">
+                                    <h4 className="text-blue-400 font-bold mb-2">
                                         AI Powered
                                     </h4>
 
@@ -518,9 +518,9 @@ const GenerateQuiz = () => {
 
                                 <div
                                     className="bg-black/20 rounded-2xl
-                                    p-4 border border-purple-400/10"
+                                    p-4 border border-sky-400/10"
                                 >
-                                    <h4 className="text-purple-400 font-bold mb-2">
+                                    <h4 className="text-sky-400 font-bold mb-2">
                                         Exam Practice
                                     </h4>
 

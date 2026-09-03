@@ -11,8 +11,8 @@ const formatDate = (iso) => {
 
 const targetBadge = (target) =>
     target === 'all'
-        ? { label: '📣 All', cls: 'bg-cyan-500/20 text-cyan-300 border-cyan-400/30' }
-        : { label: '🎓 Class', cls: 'bg-purple-500/20 text-purple-300 border-purple-400/30' };
+        ? { label: '📣 All', cls: 'bg-blue-500/20 text-blue-300 border-blue-400/30' }
+        : { label: '🎓 Class', cls: 'bg-sky-500/20 text-sky-300 border-sky-400/30' };
 
 /* ── Skeleton Card ── */
 const SkeletonCard = () => (
@@ -29,12 +29,12 @@ const AnnouncementCard = ({ ann, index }) => {
     const badge = targetBadge(ann.target);
     return (
         <article
-            className="relative rounded-2xl border border-cyan-400/15 bg-gradient-to-br from-indigo-950/60 to-slate-900/60 backdrop-blur-md p-5 shadow-lg hover:shadow-cyan-500/10 hover:border-cyan-400/30 transition-all duration-300 group"
+            className="relative rounded-2xl border border-blue-400/15 bg-gradient-to-br from-blue-950/60 to-slate-900/60 backdrop-blur-md p-5 shadow-lg hover:shadow-blue-500/10 hover:border-blue-400/30 transition-all duration-300 group"
             style={{ animationDelay: `${index * 60}ms` }}
             aria-label={`Announcement: ${ann.title}`}
         >
             {/* Left accent bar */}
-            <div className="absolute left-0 top-4 bottom-4 w-1 rounded-r-full bg-gradient-to-b from-cyan-400 to-purple-500 opacity-70 group-hover:opacity-100 transition-opacity" />
+            <div className="absolute left-0 top-4 bottom-4 w-1 rounded-r-full bg-gradient-to-b from-blue-400 to-sky-500 opacity-70 group-hover:opacity-100 transition-opacity" />
 
             <div className="pl-4">
                 {/* Top row */}
@@ -45,7 +45,7 @@ const AnnouncementCard = ({ ann, index }) => {
                             {badge.label}
                         </span>
                         {ann.target === 'specific-class' && ann.className && (
-                            <span className="text-xs font-medium px-2.5 py-1 rounded-full bg-indigo-500/20 text-indigo-300 border border-indigo-400/30">
+                            <span className="text-xs font-medium px-2.5 py-1 rounded-full bg-blue-500/20 text-blue-300 border border-blue-400/30">
                                 {ann.className}
                             </span>
                         )}
@@ -91,7 +91,7 @@ const FilterPill = ({ label, active, onClick }) => (
     <button
         onClick={onClick}
         className={`px-4 py-1.5 rounded-full text-sm font-semibold border transition-all duration-200 ${active
-                ? 'bg-gradient-to-r from-cyan-500 to-purple-600 border-transparent text-white shadow-md shadow-cyan-500/20'
+                ? 'bg-gradient-to-r from-blue-500 to-sky-600 border-transparent text-white shadow-md shadow-blue-500/20'
                 : 'bg-white/5 border-white/10 text-gray-400 hover:text-white hover:border-white/20'
             }`}
     >
@@ -152,7 +152,7 @@ const AnnouncementPage = () => {
 
     return (
         <main
-            className="min-h-screen space-y-8 p-6 lg:p-10 bg-gradient-to-br from-slate-900 to-indigo-950"
+            className="min-h-screen space-y-8 p-6 lg:p-10 bg-gradient-to-br from-slate-900 to-blue-950"
             aria-labelledby="announcements-title"
         >
             {/* ── Header ── */}
@@ -167,7 +167,7 @@ const AnnouncementPage = () => {
                     <div>
                         <h1
                             id="announcements-title"
-                            className="text-4xl font-extrabold bg-gradient-to-r from-cyan-400 via-purple-500 to-pink-500 bg-clip-text text-transparent"
+                            className="text-4xl font-extrabold bg-gradient-to-r from-blue-400 via-sky-500 to-pink-500 bg-clip-text text-transparent"
                         >
                             Announcements
                         </h1>
@@ -187,7 +187,7 @@ const AnnouncementPage = () => {
 
             {/* ── Controls: Search + Filter ── */}
             <section
-                className="bg-indigo-950/50 backdrop-blur-md rounded-2xl border border-cyan-400/20 p-4 flex flex-col sm:flex-row gap-4 items-stretch sm:items-center"
+                className="bg-blue-950/50 backdrop-blur-md rounded-2xl border border-blue-400/20 p-4 flex flex-col sm:flex-row gap-4 items-stretch sm:items-center"
                 aria-label="Announcement filters"
             >
                 {/* Search */}
@@ -199,7 +199,7 @@ const AnnouncementPage = () => {
                         value={search}
                         onChange={e => setSearch(e.target.value)}
                         aria-label="Search announcements"
-                        className="w-full pl-9 pr-4 py-2.5 rounded-xl bg-white/5 border border-white/10 text-white placeholder-gray-500 text-sm focus:outline-none focus:ring-2 focus:ring-cyan-500/40 transition"
+                        className="w-full pl-9 pr-4 py-2.5 rounded-xl bg-white/5 border border-white/10 text-white placeholder-gray-500 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500/40 transition"
                     />
                 </div>
 
@@ -217,7 +217,7 @@ const AnnouncementPage = () => {
                         {[...Array(4)].map((_, i) => <SkeletonCard key={i} />)}
                     </div>
                 ) : filtered.length === 0 ? (
-                    <div className="bg-indigo-950/50 backdrop-blur-md rounded-2xl border border-cyan-400/20 p-6">
+                    <div className="bg-blue-950/50 backdrop-blur-md rounded-2xl border border-blue-400/20 p-6">
                         {announcements.length === 0
                             ? <EmptyState onPost={() => setShowModal(true)} />
                             : (

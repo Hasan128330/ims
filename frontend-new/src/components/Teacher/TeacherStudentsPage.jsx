@@ -27,12 +27,12 @@ const TeacherStudentsPage = () => {
 
     return (
         <div className="space-y-8">
-            <h1 className="text-4xl font-extrabold bg-gradient-to-r from-cyan-400 to-purple-500 bg-clip-text text-transparent">
+            <h1 className="text-4xl font-extrabold bg-gradient-to-r from-blue-400 to-sky-500 bg-clip-text text-transparent">
                 Students
             </h1>
 
-            <div className="bg-indigo-950/50 backdrop-blur-md rounded-2xl border border-cyan-400/30 p-6">
-                <h3 className="text-xl font-semibold text-cyan-300 mb-4">Search By Class</h3>
+            <div className="bg-blue-950/50 backdrop-blur-md rounded-2xl border border-blue-400/30 p-6">
+                <h3 className="text-xl font-semibold text-blue-300 mb-4">Search By Class</h3>
 
                 <form onSubmit={fetchStudents} className="flex flex-col md:flex-row gap-4">
                     <input
@@ -47,7 +47,7 @@ const TeacherStudentsPage = () => {
                     <button
                         type="submit"
                         disabled={loading}
-                        className="py-4 px-6 bg-gradient-to-r from-purple-600 to-cyan-600 rounded-xl text-white font-bold hover:shadow-lg transition"
+                        className="py-4 px-6 bg-gradient-to-r from-sky-600 to-blue-600 rounded-xl text-white font-bold hover:shadow-lg transition"
                         aria-label={loading ? 'Searching...' : 'Search Students'}
                     >
                         {loading ? 'Loading…' : 'Search'}
@@ -57,19 +57,19 @@ const TeacherStudentsPage = () => {
 
             {students.length > 0 && (
                 <div className="overflow-x-auto">
-                    <table className="w-full text-left border border-cyan-400/30 rounded-2xl overflow-hidden" aria-label={`Students in class ${className}`}>
-                        <thead className="bg-indigo-900/50">
+                    <table className="w-full text-left border border-blue-400/30 rounded-2xl overflow-hidden" aria-label={`Students in class ${className}`}>
+                        <thead className="bg-blue-900/50">
                             <tr>
-                                <th className="p-4 text-cyan-300">Roll No</th>
-                                <th className="p-4 text-cyan-300">Name</th>
-                                <th className="p-4 text-cyan-300">Class</th>
-                                <th className="p-4 text-cyan-300">Field</th>
-                                <th className="p-4 text-cyan-300">Contact</th>
+                                <th className="p-4 text-blue-300">Roll No</th>
+                                <th className="p-4 text-blue-300">Name</th>
+                                <th className="p-4 text-blue-300">Class</th>
+                                <th className="p-4 text-blue-300">Field</th>
+                                <th className="p-4 text-blue-300">Contact</th>
                             </tr>
                         </thead>
                         <tbody>
                             {students.map(s => (
-                                <tr key={s._id} className="border-t border-cyan-400/20">
+                                <tr key={s._id} className="border-t border-blue-400/20">
                                     <td className="p-4 text-white">{s.rollNo}</td>
                                     <td className="p-4 text-white">{s.stdName}</td>
                                     <td className="p-4 text-gray-300">{s.className}</td>

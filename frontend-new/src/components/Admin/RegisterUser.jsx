@@ -47,10 +47,10 @@ const RegisterUser = ({ onClose, onSuccess }) => {
             onClick={onClose}
         >
             <div
-                className="bg-indigo-950/90 backdrop-blur-xl rounded-3xl border border-cyan-400/40 p-8 w-full max-w-3xl mx-4 my-8 shadow-2xl max-h-[90vh] overflow-y-auto"
+                className="bg-blue-950/90 backdrop-blur-xl rounded-3xl border border-blue-400/40 p-8 w-full max-w-3xl mx-4 my-8 shadow-2xl max-h-[90vh] overflow-y-auto"
                 onClick={e => e.stopPropagation()}
             >
-                <h2 id="modal-title" className="text-3xl font-bold bg-gradient-to-r from-cyan-400 to-purple-500 bg-clip-text text-transparent mb-8 text-center">
+                <h2 id="modal-title" className="text-3xl font-bold bg-gradient-to-r from-blue-400 to-sky-500 bg-clip-text text-transparent mb-8 text-center">
                     Register User
                 </h2>
 
@@ -67,7 +67,7 @@ const RegisterUser = ({ onClose, onSuccess }) => {
                     </select>
 
                     <div className="md:col-span-2 flex gap-4 pt-6">
-                        <button type="submit" disabled={loading} className="flex-1 py-4 bg-gradient-to-r from-purple-600 to-cyan-600 rounded-xl text-white font-bold hover:shadow-lg transition">
+                        <button type="submit" disabled={loading} className="flex-1 py-4 bg-gradient-to-r from-sky-600 to-blue-600 rounded-xl text-white font-bold hover:shadow-lg transition">
                             {loading ? 'Registering…' : 'Register'}
                         </button>
                         <button type="button" onClick={onClose} className="flex-1 py-4 bg-gray-700/50 rounded-xl text-white hover:bg-gray-600/50 transition">

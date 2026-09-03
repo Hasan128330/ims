@@ -55,23 +55,29 @@ const Login = () => {
     };
 
     return (
-        <div className="flex items-center justify-center min-h-screen w-full bg-gradient-to-br 
-         from-slate-900 via-indigo-950 to-slate-900 p-4">
-            <div className="w-full max-w-md p-10 space-y-8 bg-white/5 backdrop-blur-xl rounded-3xl 
-                shadow-2xl border border-cyan-400/20 hover:border-cyan-400/40 transition-all 
-                duration-500">
+        <div className="flex items-center justify-center min-h-screen w-full bg-gradient-to-br
+         from-blue-50 via-white to-sky-100 p-4">
+            <div className="w-full max-w-md p-10 space-y-8 bg-white/80 backdrop-blur-xl rounded-3xl
+                shadow-2xl shadow-blue-200/60 border border-blue-200 hover:border-blue-400 transition-all
+                duration-500 animate-fade-in">
                 <div className="text-center">
-                    <h1 className="text-4xl font-extrabold tracking-wide bg-gradient-to-r from-cyan-400 via-purple-500 to-pink-500 
+                    <div className="mx-auto mb-4 w-16 h-16 rounded-2xl bg-gradient-to-br from-blue-700 to-sky-500
+                        flex items-center justify-center shadow-lg shadow-blue-300/50">
+                        <svg className="w-9 h-9 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="1.8" aria-hidden="true">
+                            <path strokeLinecap="round" strokeLinejoin="round" d="M12 3L2 9l10 6 10-6-10-6zM4 11v6c0 1 3.5 3 8 3s8-2 8-3v-6" />
+                        </svg>
+                    </div>
+                    <h1 className="text-2xl md:text-3xl font-extrabold tracking-wide bg-gradient-to-r from-blue-800 via-blue-600 to-sky-500
                         bg-clip-text text-transparent">
-                        AZ Coaching
+                        The Fort Of Science And Commerce Education
                     </h1>
-                    <p className="mt-3 text-sm text-gray-300">Sign in to access admin dashboard</p>
+                    <p className="mt-3 text-sm text-blue-700/70">Sign in to access your dashboard</p>
                 </div>
 
                 <form className="mt-8 space-y-6" onSubmit={handleSubmit}>
                     <div className="space-y-5">
                         <div>
-                            <label htmlFor="loginInput" className="block text-sm font-medium text-gray-200">
+                            <label htmlFor="loginInput" className="block text-sm font-medium text-blue-900">
                                 Email or ID
                             </label>
                             <input
@@ -80,9 +86,9 @@ const Login = () => {
                                 name="loginInput"
                                 type="text"
                                 required
-                                className="mt-2 block w-full px-5 py-4 bg-white/10 text-white placeholder-gray-400 
-                                border border-cyan-400/30 rounded-2xl focus:ring-4 focus:ring-cyan-400/50 
-                                focus:border-cyan-400 outline-none backdrop-blur-md transition-all"
+                                className="mt-2 block w-full px-5 py-4 bg-white text-blue-950 placeholder-blue-300
+                                border border-blue-300 rounded-2xl focus:ring-4 focus:ring-blue-200
+                                focus:border-blue-500 outline-none transition-all"
                                 placeholder="admin@example.com"
                                 value={formData.loginInput}
                                 onChange={handleChange}
@@ -92,7 +98,7 @@ const Login = () => {
                         </div>
 
                         <div>
-                            <label htmlFor="password" className="block text-sm font-medium text-gray-200">
+                            <label htmlFor="password" className="block text-sm font-medium text-blue-900">
                                 Password
                             </label>
                             <input
@@ -100,9 +106,9 @@ const Login = () => {
                                 name="password"
                                 type="password"
                                 required
-                                className="mt-2 block w-full px-5 py-4 bg-white/10 text-white placeholder-gray-400 
-                                border border-cyan-400/30 rounded-2xl focus:ring-4 focus:ring-cyan-400/50 
-                                focus:border-cyan-400 outline-none backdrop-blur-md transition-all"
+                                className="mt-2 block w-full px-5 py-4 bg-white text-blue-950 placeholder-blue-300
+                                border border-blue-300 rounded-2xl focus:ring-4 focus:ring-blue-200
+                                focus:border-blue-500 outline-none transition-all"
                                 value={formData.password}
                                 onChange={handleChange}
                                 aria-label="Password"
@@ -115,9 +121,9 @@ const Login = () => {
                         type="submit"
                         id="submitBtn"
                         disabled={loading}
-                        className="w-full py-4 px-6 text-lg font-semibold rounded-2xl text-white 
-                        bg-gradient-to-r from-purple-600 to-cyan-600 hover:from-purple-700 hover:to-cyan-700 
-                        shadow-2xl hover:shadow-cyan-500/50 transition-all duration-300"
+                        className="w-full py-4 px-6 text-lg font-semibold rounded-2xl text-white
+                        bg-gradient-to-r from-blue-700 to-sky-500 hover:from-blue-800 hover:to-sky-600
+                        shadow-xl hover:shadow-blue-500/50 transition-all duration-300 active:scale-95 disabled:opacity-60"
                         aria-live="polite"
                     >
                         {loading ? 'Signing in…' : 'Sign In'}

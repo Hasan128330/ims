@@ -82,21 +82,21 @@ const ReceptionStudentsPage = () => {
     return (
         <main className="space-y-8" aria-labelledby="students-title">
             <div className="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
-                <h1 id="students-title" className="text-4xl font-extrabold bg-gradient-to-r from-cyan-400 to-purple-500 bg-clip-text text-transparent">
+                <h1 id="students-title" className="text-4xl font-extrabold bg-gradient-to-r from-blue-400 to-sky-500 bg-clip-text text-transparent">
                     Registered Students ({students.length})
                 </h1>
 
                 <button
                     onClick={() => setShowRegister(true)}
-                    className="py-3 px-6 rounded-2xl bg-gradient-to-r from-purple-600/80 to-cyan-600/80 hover:from-purple-600 hover:to-cyan-600 text-white font-bold transition shadow-lg"
+                    className="py-3 px-6 rounded-2xl bg-gradient-to-r from-sky-600/80 to-blue-600/80 hover:from-sky-600 hover:to-blue-600 text-white font-bold transition shadow-lg"
                     aria-label="Register a new student"
                 >
                     + Register Student
                 </button>
             </div>
 
-            <section className="bg-indigo-950/50 backdrop-blur-md rounded-2xl border border-cyan-400/30 p-6 space-y-4" aria-labelledby="search-title">
-                <h3 id="search-title" className="text-xl font-semibold text-cyan-300">Search</h3>
+            <section className="bg-blue-950/50 backdrop-blur-md rounded-2xl border border-blue-400/30 p-6 space-y-4" aria-labelledby="search-title">
+                <h3 id="search-title" className="text-xl font-semibold text-blue-300">Search</h3>
 
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-4" role="search">
                     <div className="space-y-2">
@@ -110,7 +110,7 @@ const ReceptionStudentsPage = () => {
                         />
                         <button
                             onClick={searchByRollNo}
-                            className="w-full py-3 bg-indigo-800/60 rounded-xl text-white hover:bg-indigo-800 transition"
+                            className="w-full py-3 bg-blue-800/60 rounded-xl text-white hover:bg-blue-800 transition"
                             aria-label="Execute search by roll number"
                         >
                             Search
@@ -128,7 +128,7 @@ const ReceptionStudentsPage = () => {
                         />
                         <button
                             onClick={searchByClass}
-                            className="w-full py-3 bg-indigo-800/60 rounded-xl text-white hover:bg-indigo-800 transition"
+                            className="w-full py-3 bg-blue-800/60 rounded-xl text-white hover:bg-blue-800 transition"
                             aria-label="Execute filter by class"
                         >
                             Filter
@@ -153,23 +153,23 @@ const ReceptionStudentsPage = () => {
 
             <section aria-live="polite" aria-atomic="true" aria-label="Student search results">
                 {students.length === 0 ? (
-                    <><p className="text-center text-gray-400 text-xl py-10" role="status">No students registered yet.</p><caption className="text-lg font-bold text-cyan-300 mb-4">Registered Students List</caption></>
+                    <><p className="text-center text-gray-400 text-xl py-10" role="status">No students registered yet.</p><caption className="text-lg font-bold text-blue-300 mb-4">Registered Students List</caption></>
                 ) : (
                     <div className="overflow-x-auto">
-                        <table className="w-full text-left border border-cyan-400/30 rounded-2xl overflow-hidden" aria-label="Registered Students List">
-                            <thead className="bg-indigo-900/50">
+                        <table className="w-full text-left border border-blue-400/30 rounded-2xl overflow-hidden" aria-label="Registered Students List">
+                            <thead className="bg-blue-900/50">
                                 <tr>
-                                    <th scope="col" className="p-4 text-cyan-300">Roll No</th>
-                                    <th scope="col" className="p-4 text-cyan-300">Name</th>
-                                    <th scope="col" className="p-4 text-cyan-300">Class</th>
-                                    <th scope="col" className="p-4 text-cyan-300">Contact</th>
-                                    <th scope="col" className="p-4 text-cyan-300">Status</th>
-                                    <th scope="col" className="p-4 text-cyan-300">Actions</th>
+                                    <th scope="col" className="p-4 text-blue-300">Roll No</th>
+                                    <th scope="col" className="p-4 text-blue-300">Name</th>
+                                    <th scope="col" className="p-4 text-blue-300">Class</th>
+                                    <th scope="col" className="p-4 text-blue-300">Contact</th>
+                                    <th scope="col" className="p-4 text-blue-300">Status</th>
+                                    <th scope="col" className="p-4 text-blue-300">Actions</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 {students.map(student => (
-                                    <tr key={student._id} className="border-t border-cyan-400/20">
+                                    <tr key={student._id} className="border-t border-blue-400/20">
                                         <td className="p-4 text-white">{student.rollNo}</td>
                                         <td className="p-4 text-white">{student.stdName || student.userId?.fullName || 'N/A'}</td>
                                         <td className="p-4 text-gray-300">{student.className}</td>

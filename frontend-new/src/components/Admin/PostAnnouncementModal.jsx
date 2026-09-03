@@ -67,7 +67,7 @@ const PostAnnouncementModal = ({ onClose, onCreated, createdBy }) => {
             {/* Modal Box */}
             <div
                 className="w-full max-w-lg mx-4 rounded-2xl 
-                bg-gradient-to-br from-slate-900 via-indigo-950 to-slate-900
+                bg-gradient-to-br from-slate-900 via-blue-950 to-slate-900
                 border border-white/10 shadow-2xl p-6"
                 onClick={(e) => e.stopPropagation()}
             >

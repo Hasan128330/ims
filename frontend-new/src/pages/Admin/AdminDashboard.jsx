@@ -21,7 +21,7 @@ const AdminDashboard = () => {
     return (
 
         // Flex container jo poori screen (h-screen) ko cover karega
-        <div className='flex h-screen bg-gradient-to-br from-slate-900 to-indigo-950 
+        <div className='flex h-screen bg-gradient-to-br from-slate-900 to-blue-950 
          overflow-hidden relative'>
 
             {/* Overlay for mobile when sidebar is open */}

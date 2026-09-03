@@ -4,15 +4,15 @@ import { HomeIcon, UsersIcon, BanknotesIcon, ClipboardDocumentCheckIcon, XMarkIc
 
 const ReceptionSidebar = ({ isOpen, setIsOpen }) => {
     return (
-        <div className={`w-64 bg-indigo-950/90 text-white flex flex-col h-screen fixed z-50 transition-transform duration-300 border-r border-indigo-700/20 shadow-2xl lg:translate-x-0 ${
+        <div className={`w-64 bg-gradient-to-b from-blue-950 via-blue-900 to-blue-950 text-white flex flex-col h-screen fixed z-50 transition-transform duration-300 border-r border-blue-700/30 shadow-2xl lg:translate-x-0 ${
             isOpen ? 'translate-x-0' : '-translate-x-full'
         }`}>
-            <div className="p-6 border-b border-cyan-400/30 flex items-center justify-between">
-                <h1 className="text-xl font-bold bg-gradient-to-r from-cyan-400 to-purple-500 bg-clip-text text-transparent flex items-center">
-                    <AcademicCapIcon className="w-6 h-6 mr-2 text-cyan-400" />
+            <div className="p-6 border-b border-blue-700/40 flex items-center justify-between">
+                <h1 className="text-xl font-bold bg-gradient-to-r from-blue-400 to-sky-300 bg-clip-text text-transparent flex items-center">
+                    <AcademicCapIcon className="w-6 h-6 mr-2 text-sky-400" />
                     Reception
                 </h1>
-                <button 
+                <button
                     onClick={() => setIsOpen(false)}
                     className="lg:hidden p-1 text-gray-400 hover:text-white transition-colors"
                 >
@@ -26,8 +26,8 @@ const ReceptionSidebar = ({ isOpen, setIsOpen }) => {
                     onClick={() => setIsOpen(false)}
                     className={({ isActive }) =>
                         `flex items-center p-3 rounded-xl transition-all duration-300 ${isActive
-                            ? 'bg-gradient-to-r from-purple-600 to-cyan-600 shadow-lg shadow-cyan-500/30 font-semibold border border-cyan-400/50'
-                            : 'hover:bg-indigo-800/60 text-gray-300 hover:text-cyan-300'}`
+                            ? 'bg-gradient-to-r from-blue-600 to-sky-500 shadow-lg shadow-blue-500/30 font-semibold border border-blue-400/50'
+                            : 'hover:bg-blue-800/60 text-blue-100 hover:text-sky-300'}`
                     }
                 >
                     <HomeIcon className="w-6 h-6 mr-3" />
@@ -39,12 +39,12 @@ const ReceptionSidebar = ({ isOpen, setIsOpen }) => {
                     onClick={() => setIsOpen(false)}
                     className={({ isActive }) =>
                         `flex items-center p-3 rounded-xl transition-all duration-300 ${isActive
-                            ? 'bg-gradient-to-r from-purple-600 to-cyan-600 shadow-lg shadow-cyan-500/30 font-semibold border border-cyan-400/50'
-                            : 'hover:bg-indigo-800/60 text-gray-300 hover:text-cyan-300'}`
+                            ? 'bg-gradient-to-r from-blue-600 to-sky-500 shadow-lg shadow-blue-500/30 font-semibold border border-blue-400/50'
+                            : 'hover:bg-blue-800/60 text-blue-100 hover:text-sky-300'}`
                     }
                 >
                     <UsersIcon className="w-6 h-6 mr-3" />
-                    <span className="text-sm font-medium">AZ Students</span>
+                    <span className="text-sm font-medium">Students</span>
                 </NavLink>
 
                 <NavLink
@@ -52,8 +52,8 @@ const ReceptionSidebar = ({ isOpen, setIsOpen }) => {
                     onClick={() => setIsOpen(false)}
                     className={({ isActive }) =>
                         `flex items-center p-3 rounded-xl transition-all duration-300 ${isActive
-                            ? 'bg-gradient-to-r from-purple-600 to-cyan-600 shadow-lg shadow-cyan-500/30 font-semibold border border-cyan-400/50'
-                            : 'hover:bg-indigo-800/60 text-gray-300 hover:text-cyan-300'}`
+                            ? 'bg-gradient-to-r from-blue-600 to-sky-500 shadow-lg shadow-blue-500/30 font-semibold border border-blue-400/50'
+                            : 'hover:bg-blue-800/60 text-blue-100 hover:text-sky-300'}`
                     }
                 >
                     <BanknotesIcon className="w-6 h-6 mr-3" />
@@ -65,8 +65,8 @@ const ReceptionSidebar = ({ isOpen, setIsOpen }) => {
                     onClick={() => setIsOpen(false)}
                     className={({ isActive }) =>
                         `flex items-center p-3 rounded-xl transition-all duration-300 ${isActive
-                            ? 'bg-gradient-to-r from-purple-600 to-cyan-600 shadow-lg shadow-cyan-500/30 font-semibold border border-cyan-400/50'
-                            : 'hover:bg-indigo-800/60 text-gray-300 hover:text-cyan-300'}`
+                            ? 'bg-gradient-to-r from-blue-600 to-sky-500 shadow-lg shadow-blue-500/30 font-semibold border border-blue-400/50'
+                            : 'hover:bg-blue-800/60 text-blue-100 hover:text-sky-300'}`
                     }
                 >
                     <ClipboardDocumentCheckIcon className="w-6 h-6 mr-3" />

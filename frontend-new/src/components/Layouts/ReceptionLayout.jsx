@@ -13,7 +13,7 @@ const ReceptionLayout = () => {
     const toggleSidebar = () => setIsSidebarOpen(!isSidebarOpen);
 
     return (
-        <div className="flex h-screen bg-gradient-to-br from-slate-900 to-indigo-950 overflow-hidden relative">
+        <div className="flex h-screen bg-gradient-to-br from-slate-900 to-blue-950 overflow-hidden relative">
             {/* Mobile Overlay */}
             {isSidebarOpen && (
                 <div 
@@ -32,17 +32,17 @@ const ReceptionLayout = () => {
             {/* Main Content Area */}
             <div className="flex-1 flex flex-col min-w-0 transition-all duration-300 lg:ml-64">
                 {/* Top Navbar */}
-                <header className="flex items-center justify-between p-4 bg-gradient-to-r from-slate-900 to-indigo-950 shadow-2xl border-b border-indigo-700/50 text-white z-30">
+                <header className="flex items-center justify-between p-4 bg-gradient-to-r from-slate-900 to-blue-950 shadow-2xl border-b border-blue-700/50 text-white z-30">
                     <div className="flex items-center">
                         <button 
                             onClick={toggleSidebar}
-                            className="p-2 mr-2 text-cyan-400 hover:bg-indigo-800/50 rounded-lg lg:hidden transition"
+                            className="p-2 mr-2 text-blue-400 hover:bg-blue-800/50 rounded-lg lg:hidden transition"
                             aria-label="Toggle sidebar menu"
                             aria-expanded={isSidebarOpen}
                         >
                             {isSidebarOpen ? <XMarkIcon className="w-6 h-6" aria-hidden="true" /> : <Bars3Icon className="w-6 h-6" aria-hidden="true" />}
                         </button>
-                        <h2 className="text-lg md:text-xl font-extrabold bg-gradient-to-r from-cyan-400 to-purple-500 bg-clip-text text-transparent truncate max-w-[150px] sm:max-w-none">
+                        <h2 className="text-lg md:text-xl font-extrabold bg-gradient-to-r from-blue-400 to-sky-500 bg-clip-text text-transparent truncate max-w-[150px] sm:max-w-none">
                             Welcome, {userName}!
                         </h2>
                     </div>
@@ -53,8 +53,8 @@ const ReceptionLayout = () => {
                         <AnnouncementBell />
 
                         {/* User Profile */}
-                        <div className="flex items-center space-x-2 border-l border-indigo-700/50 pl-2 md:pl-4" aria-label={`Logged in as ${userName}`}>
-                            <UserCircleIcon className="w-8 h-8 text-cyan-400" aria-hidden="true" />
+                        <div className="flex items-center space-x-2 border-l border-blue-700/50 pl-2 md:pl-4" aria-label={`Logged in as ${userName}`}>
+                            <UserCircleIcon className="w-8 h-8 text-blue-400" aria-hidden="true" />
                             <span className="text-xs md:text-sm font-medium text-gray-300 hidden md:block">
                                 {userName}
                             </span>

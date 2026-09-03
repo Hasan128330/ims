@@ -24,17 +24,17 @@ const FinancePage = () => {
 
     return (
         <main className="space-y-8" aria-labelledby="finance-title">
-            <h1 id="finance-title" className="text-4xl font-extrabold bg-gradient-to-r from-cyan-400 via-purple-500 to-pink-500 bg-clip-text text-transparent">
-                AZ Finance Management
+            <h1 id="finance-title" className="text-4xl font-extrabold bg-gradient-to-r from-blue-400 via-sky-500 to-pink-500 bg-clip-text text-transparent">
+                Finance Management
             </h1>
 
-            <section className="bg-indigo-950/50 backdrop-blur-md rounded-2xl border border-cyan-400/30 p-6" aria-label="Finance details">
+            <section className="bg-blue-950/50 backdrop-blur-md rounded-2xl border border-blue-400/30 p-6" aria-label="Finance details">
                 {loading ? (
                     <p className="text-white text-xl animate-pulse" aria-live="polite">Loading finance data…</p>
                 ) : (
                     <div className="space-y-2">
                         <p className="text-gray-200 font-semibold" id="backend-response-label">Backend response</p>
-                        <pre className="text-sm text-gray-300 bg-black/30 p-4 rounded-2xl overflow-x-auto border border-cyan-400/10" aria-labelledby="backend-response-label">
+                        <pre className="text-sm text-gray-300 bg-black/30 p-4 rounded-2xl overflow-x-auto border border-blue-400/10" aria-labelledby="backend-response-label">
                             {JSON.stringify(data, null, 2)}
                         </pre>
                     </div>

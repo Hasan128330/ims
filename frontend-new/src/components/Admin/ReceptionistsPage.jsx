@@ -6,7 +6,7 @@ import RegisterReceptionist from '../../components/Admin/RegisterReceptionist.js
 const ReceptionistsPage = () => {
     const [receptionists, setReceptionists] = useState([]);
     const [loading, setLoading] = useState(true);
-    
+
     const [showRegister, setShowRegister] = useState(false);
 
     useEffect(() => {
@@ -54,13 +54,13 @@ const ReceptionistsPage = () => {
     return (
         <div className="space-y-8" aria-label="Receptionists Management Page">
             <div className="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
-                <h1 className="text-4xl font-extrabold bg-gradient-to-r from-cyan-400 to-purple-500 bg-clip-text text-transparent">
-                    AZ Receptionists ({receptionists.length})
+                <h1 className="text-4xl font-extrabold bg-gradient-to-r from-blue-400 to-sky-500 bg-clip-text text-transparent">
+                    Receptionists ({receptionists.length})
                 </h1>
 
                 <button
                     onClick={() => setShowRegister(true)}
-                    className="py-3 px-6 rounded-2xl bg-gradient-to-r from-purple-600/80 to-cyan-600/80 hover:from-purple-600 hover:to-cyan-600 text-white font-bold transition shadow-lg"
+                    className="py-3 px-6 rounded-2xl bg-gradient-to-r from-sky-600/80 to-blue-600/80 hover:from-sky-600 hover:to-blue-600 text-white font-bold transition shadow-lg"
                     aria-label="Register a new receptionist"
                 >
                     + Register Receptionist
@@ -71,20 +71,20 @@ const ReceptionistsPage = () => {
                 <p className="text-center text-gray-400 text-xl py-10" aria-live="polite">No receptionists registered yet.</p>
             ) : (
                 <div className="overflow-x-auto">
-                    <table className="w-full text-left border border-cyan-400/30 rounded-2xl overflow-hidden" aria-label="Receptionists List">
-                        <thead className="bg-indigo-900/50">
+                    <table className="w-full text-left border border-blue-400/30 rounded-2xl overflow-hidden" aria-label="Receptionists List">
+                        <thead className="bg-blue-900/50">
                             <tr>
-                                <th scope="col" className="p-4 text-cyan-300">Reg ID</th>
-                                <th scope="col" className="p-4 text-cyan-300">Name</th>
-                                <th scope="col" className="p-4 text-cyan-300">Email</th>
-                                <th scope="col" className="p-4 text-cyan-300">Salary</th>
-                                <th scope="col" className="p-4 text-cyan-300">Contact</th>
-                                <th scope="col" className="p-4 text-cyan-300">Actions</th>
+                                <th scope="col" className="p-4 text-blue-300">Reg ID</th>
+                                <th scope="col" className="p-4 text-blue-300">Name</th>
+                                <th scope="col" className="p-4 text-blue-300">Email</th>
+                                <th scope="col" className="p-4 text-blue-300">Salary</th>
+                                <th scope="col" className="p-4 text-blue-300">Contact</th>
+                                <th scope="col" className="p-4 text-blue-300">Actions</th>
                             </tr>
                         </thead>
                         <tbody>
                             {receptionists.map(rec => (
-                                <tr key={rec._id} className="border-t border-cyan-400/20">
+                                <tr key={rec._id} className="border-t border-blue-400/20">
                                     <td className="p-4 text-white">{rec.receptionRegId}</td>
                                     <td className="p-4 text-white">{rec.receptionistFullName}</td>
                                     <td className="p-4 text-gray-300">{rec.userId?.email || 'N/A'}</td>

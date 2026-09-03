@@ -23,12 +23,12 @@ const Navbar = ({ onMenuClick, isSidebarOpen }) => {
 
     return (
         <header className="flex items-center justify-between p-4 bg-gradient-to-r from-slate-900 
-         to-indigo-950 shadow-2xl border-b border-indigo-700/50 text-white">
+         to-blue-950 shadow-2xl border-b border-blue-700/50 text-white">
 
             {/* Mobile Sidebar Toggle (Agar zaroorat ho) */}
             <button 
                 onClick={onMenuClick} 
-                className="p-2 rounded-md text-cyan-400 lg:hidden hover:bg-indigo-800/50 transition"
+                className="p-2 rounded-md text-blue-400 lg:hidden hover:bg-blue-800/50 transition"
                 aria-label="Open sidebar menu"
                 aria-expanded={isSidebarOpen}
             >
@@ -36,7 +36,7 @@ const Navbar = ({ onMenuClick, isSidebarOpen }) => {
             </button>
 
             {/* Page Title / Search Bar Yahan Aasakta Hai */}
-            <h2 className="welcome-admin text-xl font-extrabold bg-gradient-to-r from-cyan-400 to-purple-500 bg-clip-text
+            <h2 className="welcome-admin text-xl font-extrabold bg-gradient-to-r from-blue-400 to-sky-500 bg-clip-text
              text-transparent hidden sm:block">
                 Welcome, {userName}!
             </h2>
@@ -48,8 +48,8 @@ const Navbar = ({ onMenuClick, isSidebarOpen }) => {
                 <AnnouncementBell />
 
                 {/* User Profile / Dropdown */}
-                <div className="flex items-center space-x-2 border-l border-indigo-700/50 pl-4" aria-label={`Logged in as ${userName}`}>
-                    <UserCircleIcon className="w-8 h-8 text-cyan-400" aria-hidden="true" />
+                <div className="flex items-center space-x-2 border-l border-blue-700/50 pl-4" aria-label={`Logged in as ${userName}`}>
+                    <UserCircleIcon className="w-8 h-8 text-blue-400" aria-hidden="true" />
                     <span className="text-sm font-medium text-gray-300 hidden md:block">
                         {userName}
                     </span>
