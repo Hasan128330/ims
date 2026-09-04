@@ -7,7 +7,7 @@ dotenv.config();
 
 const app = express();
 
-const allowedOrigins = (process.env.CLIENT_URL || "http://localhost:5173")
+const allowedOrigins = ("https://ims-wine-three.vercel.app/" || "http://localhost:5173")
     .split(",")
     .map(o => o.trim());
 
