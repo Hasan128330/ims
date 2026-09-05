@@ -30,9 +30,9 @@ const port = process.env.PORT || 5000;
 // Middlewares
 // CORS: allow the dev origin and the deployed frontend. Configure via
 // CLIENT_URL env var; multiple origins can be comma-separated.
-const allowedOrigins = ("https://ims-wine-three.vercel.app/" || "http://localhost:5173")
+const allowedOrigins = (process.env.CLIENT_URL || "http://localhost:5173,https://ims-wine-three.vercel.app")
     .split(",")
-    .map(o => o.trim());
+    .map(o => o.trim().replace(/\/$/, ""));
 
 app.use(cors({
     origin: function (origin, callback) {

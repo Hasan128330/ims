@@ -7,9 +7,9 @@ dotenv.config();
 
 const app = express();
 
-const allowedOrigins = ("https://ims-wine-three.vercel.app/" || "http://localhost:5173")
+const allowedOrigins = (process.env.CLIENT_URL || "http://localhost:5173,https://ims-wine-three.vercel.app")
     .split(",")
-    .map(o => o.trim());
+    .map(o => o.trim().replace(/\/$/, ""));
 
 app.use(cors({
     origin: function (origin, callback) {
@@ -34,5 +34,5 @@ app.use('/api/results', require('./routes/results'));
 const port = process.env.PORT || 8000;
 app.listen(port, () => {
     console.log(`running on port ${port}`);
-    
+
 });
