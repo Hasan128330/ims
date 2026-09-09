@@ -8,10 +8,17 @@ import axios from 'axios';
 // NOTE: Vite's built-in import.meta.env.BASE_URL is "/" in dev, which causes
 // requests to hit the Vite dev server (404). Use VITE_API_URL instead.
 const BASE_URL = import.meta.env.VITE_API_URL || 'http://localhost:5000/api';
+const N8N_BASE_URL = import.meta.env.VITE_API_URL ? import.meta.env.VITE_API_URL.replace(/\/api$/, '') : 'http://localhost:5000';
 
 const axiosInstance = axios.create({
     baseURL: BASE_URL,
     withCredentials: true, // Must be true to send/receive cookies
+    headers: { 'Content-Type': 'application/json' },
+});
+
+const n8nAPI = axios.create({
+    baseURL: N8N_BASE_URL,
+    withCredentials: true,
     headers: { 'Content-Type': 'application/json' },
 });
 
@@ -24,5 +31,6 @@ export const aiAPI = axios.create({
 });
 
 
+export { axiosInstance, n8nAPI };
 export default axiosInstance;
 // Yey allow kar raha hai frontend ko backend sey baat karanay mai.

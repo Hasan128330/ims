@@ -3,6 +3,10 @@ dist/
 .env
 build/
 
+.vscode/
+.qwen/
+.idea/
+
 # Logs
 logs
 *.log

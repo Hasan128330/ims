@@ -1,11 +1,8 @@
-import UserModel from "../models/User.model.js";
 import StudentProfile from "../models/StudentProfile.model.js";
 import Fee from "../models/Fee.model.js";
-import { register } from "./auth.controller.js";
 import Attendance from "../models/Attendance.model.js";
 import TeacherProfile from "../models/TeacherProfile.model.js";
 import ReceptionProfileModel from "../models/ReceptionProfile.model.js";
-
 
 // receptions other methods (fees collection, attendance)
 
@@ -14,26 +11,26 @@ export const collectFee = async (req, res) => {
 
         const { rollNo, month, year, feesAmount } = req.body;
 
-        if (!rollNo || !month || !year || !feesAmount) {
+        if (!rollNo || !month || !year || feesAmount === undefined || feesAmount === null || feesAmount === '') {
             res.status(400).json({ message: "All fields are required" });
             return;
         }
 
         const student = await StudentProfile.findOne({
-            rollNo: rollNo.toUpperCase()
+            rollNo: String(rollNo).trim().toUpperCase()
         });
-
-
 
         if (!student) {
             res.status(404).json({ message: "Student not found" });
             return;
         }
 
+        const numericAmount = Number(feesAmount);
+
         let fees = await Fee.findOne({
             stdId: student._id,
             month,
-            year
+            year: Number(year)
         });
 
         if (!fees) {
@@ -44,28 +41,23 @@ export const collectFee = async (req, res) => {
                     studentName: student.stdName,
                     className: student.className,
                     month,
-                    year,
-                    feesAmount,
-                    collectedBy: req.user.fullName,
+                    year: Number(year),
+                    feesAmount: numericAmount,
+                    collectedBy: req.user?.fullName || "Receptionist",
                     collectedDate: new Date()
                 }
             );
+        } else {
+            fees.feesAmount = numericAmount;
+            fees.collectedBy = req.user?.fullName || "Receptionist";
+            fees.collectedDate = new Date();
         }
 
-        fees.feesAmount = feesAmount;
-        fees.collectedBy = req.user.fullName || "Receptionist";
-        fees.collectedDate = new Date();
-
-
-        // await fees.save();
-
-        if (fees.feesAmount >= 4500 || fees.feesAmount >= 5000) {
+        if (numericAmount >= 4500) {
             fees.status = 'paid';
-
         } else {
             fees.status = 'pending';
         }
-
 
         await fees.save();
 
@@ -73,9 +65,6 @@ export const collectFee = async (req, res) => {
             message: "Fee collected successfully",
             fees
         });
-
-        // SEND EMAIL: may be in V2 IDK
-
 
     } catch (error) {
         console.error("Collect Fee Error:", error);
@@ -91,22 +80,25 @@ export const collectFee = async (req, res) => {
 export const getStudentFeeStatus = async (req, res) => {
     try {
         const { rollNo } = req.params;
-        const student = await StudentProfile.findOne({ rollNo: rollNo.toUpperCase() });
+        const student = await StudentProfile.findOne({ rollNo: String(rollNo).trim().toUpperCase() });
 
         if (!student) return res.status(404).json({ message: "Student not found" });
 
-        const fees = await Fee.find({ stdId: student._id });
+        const fees = await Fee.find({ stdId: student._id }).sort({ year: -1, createdAt: -1 });
 
         res.status(200).json({
             student: {
                 name: student.stdName,
                 rollNo: student.rollNo,
                 className: student.className
-
             },
 
             fees: fees.map(fee => ({
+                _id: fee._id,
                 status: fee.status,
+                month: fee.month,
+                year: fee.year,
+                feesAmount: fee.feesAmount,
                 collectedBy: fee.collectedBy,
                 collectedDate: fee.collectedDate
             }))
@@ -115,24 +107,24 @@ export const getStudentFeeStatus = async (req, res) => {
 
 
     } catch (error) {
-        res.status(500).json({ message: "Error fetching fee status" });
+        res.status(500).json({ message: "Error fetching fee status", error: error.message });
     }
 }
 
 
 export const getAllPendingFees = async (req, res) => {
     try {
-        const pending = await Fee.find({
-            status: "pending"
-        });
+        const fees = await Fee.find({
+            status: { $in: ["pending", "unpaid"] }
+        }).sort({ createdAt: -1 });
 
-        res.status(200).json(pending);
+        res.status(200).json(fees);
     } catch (error) {
-        res.status(500).json({ message: "Error fetching pending fees" });
+        res.status(500).json({ message: "Error fetching pending fees", error: error.message });
     }
 }
 
-// A method which will be triggered by n8n
+// A method which will be triggered by n8n, Add Cron job
 export const changeFeeStatusToUnpaid = async (req, res) => {
     try {
 
@@ -153,7 +145,7 @@ export const changeFeeStatusToUnpaid = async (req, res) => {
             const feeExists = await Fee.findOne({
                 stdId: student._id,
                 month,
-                year
+                year: Number(year)
             });
 
             if (!feeExists) {
@@ -164,7 +156,7 @@ export const changeFeeStatusToUnpaid = async (req, res) => {
                     studentName: student.stdName,
                     className: student.className,
                     month,
-                    year,
+                    year: Number(year),
                     feesAmount: 0,
                     status: "unpaid",
                     collectedBy: null,
@@ -178,7 +170,7 @@ export const changeFeeStatusToUnpaid = async (req, res) => {
         res.status(200).json({
             message: "Unpaid fee records generated successfully",
             month,
-            year,
+            year: Number(year),
             totalCreated: createdRecords.length
         });
 
@@ -194,11 +186,10 @@ export const changeFeeStatusToUnpaid = async (req, res) => {
 
 
 // API for n8n user + studentprofile + fees
-
 export const getStudentsFeeData = async (req, res) => {
     try {
-
         const students = await StudentProfile.aggregate([
+            // Join user email
             {
                 $lookup: {
                     from: "users",
@@ -208,59 +199,71 @@ export const getStudentsFeeData = async (req, res) => {
                 }
             },
             {
-                $unwind: "$user"
+                $unwind: {
+                    path: "$user",
+                    preserveNullAndEmptyArrays: true
+                }
             },
+            // Join ALL fee records for this student
             {
                 $lookup: {
                     from: "fees",
                     localField: "_id",
                     foreignField: "stdId",
-                    as: "fee"
+                    as: "allFees"
                 }
             },
+            // Sort the fee array by year desc then createdAt desc so index 0 = latest
             {
-                $unwind: {
-                    path: "$fee",
-                    preserveNullAndEmptyArrays: true
+                $addFields: {
+                    sortedFees: {
+                        $sortArray: {
+                            input: "$allFees",
+                            sortBy: { year: -1, createdAt: -1 }
+                        }
+                    }
                 }
             },
+            // Project one row per student with the latest fee's data
             {
                 $project: {
                     _id: 0,
-
                     studentId: "$_id",
                     rollNo: 1,
-
                     studentName: "$stdName",
                     email: "$user.email",
-
                     className: 1,
                     field: 1,
-
-                    feeAmount: {
-                        $ifNull: ["$fee.feesAmount", 0]
-                    },
-
-                    feeStatus: {
-                        $ifNull: ["$fee.status", "unpaid"]
-                    },
-
-                    month: "$fee.month",
-                    year: "$fee.year"
+                    feesAmount: { $ifNull: [{ $arrayElemAt: ["$sortedFees.feesAmount", 0] }, 0] },
+                    feeAmount:  { $ifNull: [{ $arrayElemAt: ["$sortedFees.feesAmount", 0] }, 0] },
+                    status:    { $ifNull: [{ $arrayElemAt: ["$sortedFees.status",     0] }, "unpaid"] },
+                    feeStatus: { $ifNull: [{ $arrayElemAt: ["$sortedFees.status",     0] }, "unpaid"] },
+                    month: { $ifNull: [{ $arrayElemAt: ["$sortedFees.month", 0] }, null] },
+                    year:  { $ifNull: [{ $arrayElemAt: ["$sortedFees.year",  0] }, null] }
                 }
             }
         ]);
 
-        res.status(200).json({
-            students
-        });
+        return res.status(200).json({ students });
 
     } catch (error) {
-        console.error(error);
-
-        res.status(500).json({
+        console.error("getStudentsFeeData Error:", error);
+        return res.status(500).json({
             message: "Error fetching student fee data",
             error: error.message
         });
     }
 };
+
+
+export const getAllUnpaidFees = async (req, res) => {
+    try {
+        const unpaid = await Fee.find({
+            status: "unpaid"
+        }).sort({ createdAt: -1 });
+
+        res.status(200).json(unpaid);
+    } catch (error) {
+        res.status(500).json({ message: "Error in unpaid fees", error: error.message });
+    }
+}
