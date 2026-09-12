@@ -533,7 +533,7 @@ const ReceptionFeesPage = () => {
                             <div className="flex items-center gap-3">
                                 <div className="bg-sky-500/20 p-3 rounded-xl"><CurrencyDollarIcon className="w-6 h-6 text-sky-400" aria-hidden="true" /></div>
                                 <div>
-                                    <p className="text-xs text-gray-400">Pending Amount</p>
+                                    <p className="text-xs text-gray-400">Amount</p>
                                     <p className="text-2xl font-extrabold text-sky-300">PKR {totalPendingAmount.toLocaleString()}</p>
                                 </div>
                             </div>

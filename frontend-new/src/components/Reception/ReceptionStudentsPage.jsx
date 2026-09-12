@@ -183,13 +183,13 @@ const ReceptionStudentsPage = () => {
                                             >
                                                 Edit
                                             </button>
-                                            <button
+                                            {/* <button
                                                 onClick={() => handleDelete(student.rollNo)}
                                                 className="text-red-400 hover:text-red-300 font-medium"
                                                 aria-label={`Delete student ${student.stdName || student.rollNo}`}
                                             >
                                                 Delete
-                                            </button>
+                                            </button> */}
                                         </td>
                                     </tr>
                                 ))}

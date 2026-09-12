@@ -23,7 +23,7 @@ app.use(cors({
 }));
 app.use(express.json());
 
-const mongoUri = process.env.MONGO_URI || "mongodb://hadi:hadi_7990@ac-3b3rymf-shard-00-00.z0w2jij.mongodb.net:27017,ac-3b3rymf-shard-00-01.z0w2jij.mongodb.net:27017,ac-3b3rymf-shard-00-02.z0w2jij.mongodb.net:27017/AI_MCQS_DB?ssl=true&replicaSet=atlas-6gkk7g-shard-0&authSource=admin&appName=Cluster0/AI_MCQS_DB";
+const mongoUri = process.env.MONGO_URI;
 connectDB(mongoUri).catch(() => {});
 
 app.get('/api/health', (req, res) => res.json({ ok: true }));
