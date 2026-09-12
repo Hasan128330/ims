@@ -40,7 +40,7 @@ const feeSchema = new mongoose.Schema({
 
     status: {
         type: String,
-        enum: ['paid', 'pending', 'unpaid'],
+        enum: ['paid', 'unpaid'],
         default: 'pending'
     },
     collectedBy: String, // receptionist name

@@ -18,7 +18,7 @@ router.use(protect, authorize('receptionist'));  // check
 router.post('/collect', collectFee);
 router.get('/student/:rollNo', getStudentFeeStatus);
 router.get('/unpaid', getAllUnpaidFees);
-router.get('/pending', getAllPendingFees);
+// router.get('/pending', getAllPendingFees);
 router.get('/all-students', getStudentsFeeData);
 router.post('/generate-unpaid', changeFeeStatusToUnpaid);
 router.post('/fee-status-unpaid', changeFeeStatusToUnpaid);

@@ -53,10 +53,10 @@ export const collectFee = async (req, res) => {
             fees.collectedDate = new Date();
         }
 
-        if (numericAmount >= 4500) {
+        if (numericAmount > 0) {
             fees.status = 'paid';
         } else {
-            fees.status = 'pending';
+            fees.status = 'unpaid';
         }
 
         await fees.save();
@@ -111,7 +111,7 @@ export const getStudentFeeStatus = async (req, res) => {
     }
 }
 
-
+// Removed fees Pending feature 
 export const getAllPendingFees = async (req, res) => {
     try {
         const fees = await Fee.find({
@@ -124,7 +124,7 @@ export const getAllPendingFees = async (req, res) => {
     }
 }
 
-// A method which will be triggered by n8n, Add Cron job
+// A method which will be triggered by n8n, Cron job or Frontend manually
 export const changeFeeStatusToUnpaid = async (req, res) => {
     try {
 
