@@ -79,7 +79,6 @@ const BarChart = ({ data, maxLabel }) => {
 };
 
 /* ============ ADD EXPENSE MODAL ============ */
-const AddExpenseModal = ({ onClose, onAdd }) => {
 const AddExpenseModal = ({ onClose, onAdd, selectedMonth, selectedYear }) => {
     const [form, setForm] = useState({
         title: '',
@@ -99,7 +98,6 @@ const AddExpenseModal = ({ onClose, onAdd, selectedMonth, selectedYear }) => {
         }
         setSubmitting(true);
         try {
-            const res = await addExpense({ ...form, amount: Number(form.amount) });
             const res = await addExpense({
                 ...form,
                 amount: Number(form.amount),
@@ -119,7 +117,6 @@ const AddExpenseModal = ({ onClose, onAdd, selectedMonth, selectedYear }) => {
     return (
         <div className="fixed inset-0 bg-black/60 backdrop-blur-sm flex items-center justify-center z-50 p-4" role="dialog" aria-modal="true" aria-label="Add Expense">
             <div className="bg-blue-950 border border-blue-400/30 rounded-2xl p-6 w-full max-w-md shadow-2xl">
-                <h3 className="text-xl font-extrabold bg-gradient-to-r from-blue-400 to-sky-500 bg-clip-text text-transparent mb-4">
                 <h3 className="text-xl font-extrabold bg-gradient-to-r from-blue-400 to-sky-500 bg-clip-text text-transparent mb-1">
                     Add New Expense
                 </h3>
