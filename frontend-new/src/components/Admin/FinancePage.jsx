@@ -80,6 +80,7 @@ const BarChart = ({ data, maxLabel }) => {
 
 /* ============ ADD EXPENSE MODAL ============ */
 const AddExpenseModal = ({ onClose, onAdd }) => {
+const AddExpenseModal = ({ onClose, onAdd, selectedMonth, selectedYear }) => {
     const [form, setForm] = useState({
         title: '',
         category: 'Other Cost',
@@ -99,6 +100,12 @@ const AddExpenseModal = ({ onClose, onAdd }) => {
         setSubmitting(true);
         try {
             const res = await addExpense({ ...form, amount: Number(form.amount) });
+            const res = await addExpense({
+                ...form,
+                amount: Number(form.amount),
+                month: selectedMonth,
+                year: Number(selectedYear)
+            });
             toast.success('Expense added successfully!');
             onAdd(res.data);
             onClose();
@@ -113,8 +120,12 @@ const AddExpenseModal = ({ onClose, onAdd }) => {
         <div className="fixed inset-0 bg-black/60 backdrop-blur-sm flex items-center justify-center z-50 p-4" role="dialog" aria-modal="true" aria-label="Add Expense">
             <div className="bg-blue-950 border border-blue-400/30 rounded-2xl p-6 w-full max-w-md shadow-2xl">
                 <h3 className="text-xl font-extrabold bg-gradient-to-r from-blue-400 to-sky-500 bg-clip-text text-transparent mb-4">
+                <h3 className="text-xl font-extrabold bg-gradient-to-r from-blue-400 to-sky-500 bg-clip-text text-transparent mb-1">
                     Add New Expense
                 </h3>
+                <p className="text-xs text-blue-400 mb-4">
+                    For: <span className="font-semibold text-sky-300">{selectedMonth} {selectedYear}</span>
+                </p>
                 <form onSubmit={handleSubmit} className="space-y-4">
                     <div>
                         <label className="block text-sm text-blue-200 mb-1">Title *</label>
@@ -569,6 +580,7 @@ const FinancePage = () => {
 
             {/* Modals */}
             {showAddModal && <AddExpenseModal onClose={() => setShowAddModal(false)} onAdd={handleAddExpense} />}
+            {showAddModal && <AddExpenseModal onClose={() => setShowAddModal(false)} onAdd={handleAddExpense} selectedMonth={selectedMonth} selectedYear={selectedYear} />}
             {showEditModal && <EditExpenseModal expense={editingExpense} onClose={() => setShowEditModal(false)} onUpdate={handleUpdateExpense} />}
             {showDeleteModal && <ConfirmDeleteModal expense={selectedExpense} onConfirm={handleDeleteExpense} onClose={() => setShowDeleteModal(false)} />}
         </main>

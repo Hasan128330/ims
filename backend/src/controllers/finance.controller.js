@@ -110,11 +110,25 @@ export const addExpense = async (req, res) => {
             notes
         } = req.body;
 
+        // Validate required fields before hitting Mongoose
+        if (!month) {
+            return res.status(400).json({ message: "Month is required" });
+        }
+        if (!year || isNaN(Number(year))) {
+            return res.status(400).json({ message: "A valid year is required" });
+        }
+        if (!title) {
+            return res.status(400).json({ message: "Expense title is required" });
+        }
+        if (amount === undefined || amount === null || isNaN(Number(amount))) {
+            return res.status(400).json({ message: "A valid amount is required" });
+        }
+
         const expense = await Expense.create({
             title,
             description,
             category,
-            amount,
+            amount: Number(amount),
             month,
             year: Number(year),
             referenceId,
